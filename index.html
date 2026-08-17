@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Ansab | Medical Researcher & Clinician-in-Training</title>
+    <meta name="description" content="Portfolio of Muhammad Ansab - Medical Student at SIMS, Researcher specializing in Precision Oncology, Systematic Reviews, and R Programming with 13 peer-reviewed publications.">
+    
+    <!-- Fonts: Switzer & Alex Brush -->
+    <link rel="preconnect" href="https://api.fontshare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://api.fontshare.com/v2/css?f[]=switzer@300,400,500,600,700,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN with Strict 5-Color Palette -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        theme: {
+                            orange: '#CD5C3A',
+                            green: '#21A15C',
+                            cream: '#F6F3ED',
+                            blue: '#2A75EB',
+                            dark: '#191919'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Switzer', 'sans-serif'],
+                        script: ['"Alex Brush"', 'cursive'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        body {
+            background-color: #F6F3ED; /* theme-cream */
+            color: #191919; /* theme-dark */
+            font-family: 'Switzer', sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        .signature-font {
+            font-family: 'Alex Brush', cursive;
+        }
+        
+        /* Unified Card Styles */
+        .solid-card {
+            border: 2px solid #191919;
+            border-radius: 1.75rem;
+            box-shadow: 6px 6px 0px 0px #191919;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, z-index 0.4s ease;
+        }
+        
+        /* Smooth Fanned Cards Hover Effect with Zero Jitter */
+        .fanned-card {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, z-index 0s;
+            will-change: transform;
+        }
+        .fanned-card:hover {
+            transform: translateY(-50px) scale(1.05) rotate(0deg) !important;
+            box-shadow: 14px 22px 0px 0px #191919;
+            z-index: 100 !important;
+        }
+
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Infinite Marquee Animation */
+        @keyframes scrollRightToLeft {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .marquee-track {
+            display: flex;
+            width: max-content;
+            animation: scrollRightToLeft 45s linear infinite;
+        }
+        .marquee-track:hover {
+            animation-play-state: paused;
+        }
+
+        /* Strict 5-Color Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F6F3ED;
+            border-left: 2px solid #191919;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #191919;
+            border: 2px solid #F6F3ED;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #CD5C3A;
+        }
+    </style>
+</head>
+<body class="selection:bg-theme-orange selection:text-theme-cream">
+
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-theme-cream py-4 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="#hero" class="text-lg font-bold tracking-tight text-theme-dark flex items-center gap-2.5">
+                <span class="w-3 h-3 rounded-full bg-theme-orange animate-pulse border-2 border-theme-dark"></span>
+                Muhammad Ansab
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-theme-dark">
+                <a href="#about" class="hover:text-theme-orange transition-colors">About</a>
+                <a href="#publications" class="hover:text-theme-green transition-colors">Publications (13)</a>
+                <a href="#journey" class="hover:text-theme-blue transition-colors">Journey</a>
+                <a href="#skills" class="hover:text-theme-orange transition-colors">Skills</a>
+                <a href="#contact" class="hover:text-theme-green transition-colors">Contact</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <button id="mobile-menu-btn" class="md:hidden text-theme-dark hover:text-theme-orange focus:outline-none">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-theme-cream p-6 flex flex-col gap-4 shadow-xl border-b-2 border-theme-dark">
+            <a href="#about" class="mobile-link text-theme-dark hover:text-theme-orange font-bold py-1">About</a>
+            <a href="#publications" class="mobile-link text-theme-dark hover:text-theme-green font-bold py-1">Publications</a>
+            <a href="#journey" class="mobile-link text-theme-dark hover:text-theme-blue font-bold py-1">Journey</a>
+            <a href="#skills" class="mobile-link text-theme-dark hover:text-theme-orange font-bold py-1">Skills</a>
+            <a href="#contact" class="mobile-link text-theme-dark hover:text-theme-green font-bold py-1">Contact</a>
+        </div>
+    </header>
+
+    <section id="hero" class="relative min-h-[90vh] flex items-center justify-center pt-32 pb-20 px-6 md:px-12 bg-theme-cream">
+        <div class="max-w-4xl mx-auto text-center relative z-10 reveal active">
+            <h1 class="text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight text-theme-dark mb-4 leading-[1.05]">
+                Muhammad <span class="signature-font font-normal text-6xl sm:text-8xl md:text-9xl text-theme-orange ml-2">Ansab</span>
+            </h1>
+            
+            <p class="max-w-2xl mx-auto text-theme-dark text-base sm:text-lg mb-10 leading-relaxed font-medium">
+                Researcher | Med Student | Precision Oncology | R Programming | Lahore, Punjab, Pakistan
+            </p>
+            
+            <div class="flex flex-wrap items-center justify-center gap-4">
+                <a href="#publications" class="px-7 py-3.5 rounded-full font-bold text-sm bg-theme-dark text-theme-cream hover:bg-theme-orange transition-all border-2 border-theme-dark shadow-[4px_4px_0px_0px_#191919] hover:shadow-[6px_6px_0px_0px_#191919] flex items-center gap-2">
+                    <span>View Publications</span>
+                </a>
+                <a href="#contact" class="px-7 py-3.5 rounded-full font-bold text-sm bg-theme-cream text-theme-dark border-2 border-theme-dark hover:bg-theme-green hover:text-theme-cream transition-all shadow-[4px_4px_0px_0px_#191919] hover:shadow-[6px_6px_0px_0px_#191919] flex items-center gap-2">
+                    <span>Get in Touch</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 px-6 md:px-12 max-w-7xl mx-auto reveal">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-5 relative">
+                <div class="relative mx-auto max-w-sm bg-theme-cream p-4 solid-card flex flex-col items-center justify-center text-center">
+                    <div class="w-32 h-32 rounded-full bg-theme-cream border-[3px] border-theme-dark flex items-center justify-center mb-4 text-theme-dark font-bold signature-font text-6xl shadow-inner">
+                        MA
+                    </div>
+                    <span class="text-theme-dark font-bold text-2xl tracking-tight">Muhammad Ansab</span>
+                    <span class="text-sm font-mono text-theme-orange font-bold mt-2">MBBS Final Year</span>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 space-y-6">
+                <div>
+                    <h2 class="text-3xl sm:text-5xl font-bold text-theme-dark leading-tight mb-4">
+                        Clinical Care at <span class="text-theme-blue">Services Institute of Medical Sciences (SIMS)</span>, Oncology Research, and <span class="text-theme-orange">Evidence-Based Innovation</span>
+                    </h2>
+                </div>
+
+                <div class="space-y-4 text-theme-dark text-base sm:text-lg leading-relaxed font-medium">
+                    <p>
+                        I am a final-year medical student at the <strong class="text-theme-blue">Services Institute of Medical Sciences (SIMS)</strong> with a strong academic foundation and a dedicated interest in oncology, particularly in the development and clinical application of targeted cancer therapies. 
+                    </p>
+                    <p>
+                        My research experience spans systematic reviews, meta-analyses, and real-world data studies related to internal medicine and targeted oncology. I am especially drawn to translational oncology and precision medicine, and I aspire to contribute to the advancement of biomarker-driven treatment strategies in solid tumors.
+                    </p>
+                    <p>
+                        With a growing portfolio of scientific presentations and publications, I aim to build a career at the intersection of clinical care, oncology research, and evidence-based innovation. Beside I have been involved in various volunteer activities through societies like IFMSA Pakistan and VFAHT Pakistan.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PUBLICATIONS SECTION (13 PAPERS - INFINITE MARQUEE) -->
+    <section id="publications" class="py-24 px-0 max-w-full overflow-hidden bg-theme-cream reveal">
+        <div class="max-w-7xl mx-auto mb-12 px-6">
+            <h2 class="text-3xl sm:text-5xl font-bold text-theme-dark">13 Peer-Reviewed Publications</h2>
+            <p class="text-sm font-mono text-theme-dark/70 mt-2">Click any publication card to view the official peer-reviewed paper.</p>
+        </div>
+
+        <div class="relative w-full overflow-hidden py-8">
+            <div class="marquee-track flex gap-6 px-6">
+                
+                <!-- 1: Orange -->
+                <a href="https://www.sciencedirect.com/science/article/abs/pii/S104084282500335X?via%3Dihub" target="_blank" class="w-[350px] sm:w-[400px] shrink-0 p-8 bg-theme-orange text-theme-cream solid-card flex flex-col justify-between cursor-pointer hover:scale-[1.03] transition-transform">
+                    <div>
+                        <div class="mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-mono bg-theme-cream text-theme-dark font-bold border-2 border-theme-dark">Meta-Analysis</span>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold mb-3 leading-snug">
+                            Comparing fondaparinux and low molecular weight heparin for thromboprophylaxis after hip and knee arthroplasty
+                        </h3>
+                        <p class="text-xs font-medium mb-4">A systematic review and meta-analysis</p>
+                    </div>
+                    <span class="text-xs font-mono font-bold underline">View Publication →</span>
+                </a>
+
+                <!-- 2: Green -->
+                <a href="https://www.sciencedirect.com/science/article/abs/pii/S1040842825003336" target="_blank" class="w-[350px] sm:w-[400px] shrink-0 p-8 bg-theme-green text-theme-cream solid-card flex flex-col justify-between cursor-pointer hover:scale-[1.03] transition-transform">
+                    <div>
+                        <div class="mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-mono bg-theme-cream text-theme-dark font-bold border-2 border-theme-dark">Systematic Review</span>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold mb-3 leading-snug">
+                            Evaluating the risks and benefits of continuing versus withholding renin–angiotensin system inhibitors
+                        </h3>
+                        <p class="text-xs font-medium mb-4">Systematic review and meta-analysis with trial sequential analysis</p>
+                    </div>
+                    <span class="text-xs font-mono font-bold underline">View Publication →</span>
+                </a>
+
+                <!-- 3: Blue -->
+                <a href="https://link.springer.com/article/10.1007/s00210-025-04482-4" target="_blank" class="w-[350px] sm:w-[400px] shrink-0 p-8 bg-theme-blue text-theme-cream solid-card flex flex-col justify-between cursor-pointer hover:scale-[1.03] transition-transform">
+                    <div>
+                        <div class="mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-mono bg-theme-cream text-theme-dark font-bold border-2 border-theme-dark">Meta-Analysis</span>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold mb-3 leading-snug">
+                            The impact of intraosseous vs intravenous vascular access during resuscitation in out-of-hospital cardiac arrest
+                        </h3>
+                        <p class="text-xs font-medium mb-4">A comprehensive systematic review and meta-analysis</p>
+                    </div>
+                    <span class="text-xs font-mono font-bold underline">View Publication →</span>
+                </a>
+
+                <!-- 4: Dark -->
+                <a href="https://link.springer.com/article/10.1007/s00210-025-04388-1" target="_blank" class="w-[350px] sm:w-[400px] shrink-0 p-8 bg-theme-dark text-theme-cream solid-card flex flex-col justify-between cursor-pointer hover:scale-[1.03] transition-transform">
+                    <div>
+                        <div class="mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-mono bg-theme-cream text-theme-cream font-bold border-2 border-theme-cream">Meta-Analysis</span>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold mb-3 leading-snug">
+                            Targeted doublet therapy with encorafenib and cetuximab for BRAF V600E-mutant metastatic colorectal cancer
+                        </h3>
+                        <p class="text-xs font-medium mb-4">A systematic review and meta-analysis</p>
+                    </div>
+                    <span class="text-xs font-mono font-bold underline">View Publication →</span>
+                </a>
+
+                <!-- 5: Cream -->
+                <a href="https://link.springer.com/article/10.1007/s00234-025-03688-w" target="_blank" class="w-[350px] sm:w-[400px] shrink-0 p-8 bg-theme-cream text-theme-dark solid-card flex flex-col justify-between cursor-pointer hover:scale-[1.03] transition-transform">
+                    <div>
+                        <div class="mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-mono bg-theme-dark text-theme-cream font-bold border-2 border-theme-dark">Retrospective</span>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold mb-3 leading-snug">
+                            Trends and Disparities in Heart Failure Mortality Among Hypertensive Older Adults in the United States
+                        </h3>
+                        <p class="text-xs font-medium mb-4">A 22-Year Retrospective Study</p>
+                    </div>
+                    <span class="text-xs font-mono font-bold underline">View Publication →</span>
+                </a>
+
+                <!-- 6: Orange -->
+                <a href="https://link.springer.com/article/10.1186/s12885-025-14482-5" target="_blank" class="w-[350px] sm:w-[400px] shrink-0 p-8 bg-theme-orange text-theme-cream solid-card flex flex-col justify-between cursor-pointer hover:scale-[1.03] transition-transform">
+                    <div>
+                        <div class="mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-mono bg-theme-cream text-theme-dark font-bold border-2 border-theme-dark">Meta-Analysis</span>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold mb-3 leading-snug">
+                            Thermal ablation versus surgical resection for colorectal liver metastases: a GRADE-assessed systematic review
+                        </h3>
+                        <p class="text-xs font-medium mb-4">Systematic review and meta-analysis</p>
+                    </div>
+                    <span class="text-xs font-mono font-bold underline">View Publication →</span>
+                </a>
+
+                <!-- 7: Green -->
+                <a href="https://onlinelibrary.wiley.com/doi/10.1111/jch.70064" target="_blank" class="w-[350px] sm:w-[400px] shrink-0 p-8 bg-theme-green text-theme-cream solid-card flex flex-col justify-between cursor-pointer hover:scale-[1.03] transition-transform">
+                    <div>
+                        <div class="mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-mono bg-theme-cream text-theme-dark font-bold border-2 border-theme-dark">Systematic Review</span>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold mb-3 leading-snug">
+                            Direct oral anticoagulant dose vs dual antiplatelet therapy after left atrial appendage closure
+                        </h3>
+                        <p class="text-xs font-medium mb-4">A systematic review and meta-analysis</p>
+                    </div>
+                    <span class="text-xs font-mono font-bold underline">View Publication →</span>
+                </a>
+
+                <!-- 8: Blue -->
+                <a href="https://www.sciencedirect.com/science/article/pii/S2772609625000292" target="_blank" class="w-[350px] sm:w-[400px] shrink-0 p-8 bg-theme-blue text-theme-cream solid-card flex flex-col justify-between cursor-pointer hover:scale-[1.03] transition-transform">
+                    <div>
+                        <div class="mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-mono bg-theme-cream text-theme-dark font-bold border-2 border-theme-dark">Meta-Analysis</span>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold mb-3 leading-snug">
+                            Clinical impact of high-dose esomeprazole-amoxicillin dual therapy as rescue treatment for H. pylori
+                        </h3>
+                        <p class="text-xs font-medium mb-4">Systematic Review & Meta-Analysis</p>
+                    </div>
+                    <span class="text-xs font-mono font-bold underline">View Publication →</span>
+                </a>
+
+                <!-- 9: Dark -->
+                <a href="https://www.sciencedirect.com/science/article/abs/pii/S0147956325000457" target="_blank" class="w-[350px] sm:w-[400px] shrink-0 p-8 bg-theme-dark text-theme-cream solid-card flex flex-col justify-between cursor-pointer hover:scale-[1.03] transition-transform">
+                    <div>
+                        <div class="mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-mono bg-theme-cream text-theme-cream font-bold border-2 border-theme-cream">Original Research</span>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold mb-3 leading-snug">
+                            Evaluating cardiovascular outcomes and rehospitalization rates in heart failure patients with preserved ejection fraction
+                        </h3>
+                        <p class="text-xs font-medium mb-4">Real-world multicenter analysis</p>
+                    </div>
+                    <span class="text-xs font-mono font-bold underline">View Publication →</span>
+                </a>
+
+                <!-- 10: Cream -->
+                <a href="https://www.clinical-genitourinary-cancer.com/article/S1558-7673(24)00268-4/abstract" target="_blank" class="w-[350px] sm:w-[400px] shrink-0 p-8 bg-theme-cream text-theme-dark solid-card flex flex-col justify-between cursor-pointer hover:scale-[1.03] transition-transform">
+                    <div>
+                        <div class="mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-mono bg-theme-dark text-theme-cream font-bold border-2 border-theme-dark">Oncology</span>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold mb-3 leading-snug">
+                            Efficacy of tyrosine kinase inhibitors in metastatic renal cell carcinoma: a systematic review
+                        </h3>
+                        <p class="text-xs font-medium mb-4">Genitourinary oncology review</p>
+                    </div>
+                    <span class="text-xs font-mono font-bold underline">View Publication →</span>
+                </a>
+
+                <!-- 11: Orange -->
+                <a href="https://www.ovid.com/jnls/bloodcoagulation/abstract/10.1097/mbc.0000000000001352" target="_blank" class="w-[350px] sm:w-[400px] shrink-0 p-8 bg-theme-orange text-theme-cream solid-card flex flex-col justify-between cursor-pointer hover:scale-[1.03] transition-transform">
+                    <div>
+                        <div class="mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-mono bg-theme-cream text-theme-dark font-bold border-2 border-theme-dark">Thrombosis</span>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold mb-3 leading-snug">
+                            Comparing fondaparinux and low molecular weight heparin for venous thromboembolism
+                        </h3>
+                        <p class="text-xs font-medium mb-4">Coagulation & Fibrinolysis study</p>
+                    </div>
+                    <span class="text-xs font-mono font-bold underline">View Publication →</span>
+                </a>
+
+                <!-- 12: Green -->
+                <a href="https://www.sciencedirect.com" target="_blank" class="w-[350px] sm:w-[400px] shrink-0 p-8 bg-theme-green text-theme-cream solid-card flex flex-col justify-between cursor-pointer hover:scale-[1.03] transition-transform">
+                    <div>
+                        <div class="mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-mono bg-theme-cream text-theme-dark font-bold border-2 border-theme-dark">Systematic Review</span>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold mb-3 leading-snug">
+                            Prognostic value of circulating tumor DNA in gastrointestinal malignancies
+                        </h3>
+                        <p class="text-xs font-medium mb-4">Precision oncology biomarkers</p>
+                    </div>
+                    <span class="text-xs font-mono font-bold underline">View Publication →</span>
+                </a>
+
+                <!-- 13: Blue -->
+                <a href="https://link.springer.com" target="_blank" class="w-[350px] sm:w-[400px] shrink-0 p-8 bg-theme-blue text-theme-cream solid-card flex flex-col justify-between cursor-pointer hover:scale-[1.03] transition-transform">
+                    <div>
+                        <div class="mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-mono bg-theme-cream text-theme-dark font-bold border-2 border-theme-dark">Meta-Analysis</span>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold mb-3 leading-snug">
+                            Comparative safety and efficacy of novel antidiabetic agents in chronic kidney disease
+                        </h3>
+                        <p class="text-xs font-medium mb-4">Nephrology & endocrinology meta-analysis</p>
+                    </div>
+                    <span class="text-xs font-mono font-bold underline">View Publication →</span>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="journey" class="py-24 px-6 md:px-12 max-w-4xl mx-auto reveal">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl sm:text-5xl font-bold text-theme-dark mb-4">Experience & Education</h2>
+        </div>
+
+        <div class="border-l-4 border-theme-dark ml-4 md:ml-12 space-y-10">
+            <div class="relative pl-8 md:pl-12">
+                <div class="absolute -left-[14px] top-1 w-6 h-6 rounded-full bg-theme-orange border-4 border-theme-dark"></div>
+                <span class="text-xs font-mono text-theme-orange font-bold uppercase">Dec 2025 – Present</span>
+                <h3 class="text-2xl font-bold text-theme-dark mt-1">Vice President SIMS-LC</h3>
+                <p class="text-sm text-theme-dark font-medium">IFMSA-Pakistan</p>
+            </div>
+
+            <div class="relative pl-8 md:pl-12">
+                <div class="absolute -left-[14px] top-1 w-6 h-6 rounded-full bg-theme-green border-4 border-theme-dark"></div>
+                <span class="text-xs font-mono text-theme-green font-bold uppercase">Jun 2025 – Present</span>
+                <h3 class="text-2xl font-bold text-theme-dark mt-1">Peer Reviewer</h3>
+                <p class="text-sm text-theme-dark font-medium">Web of Science, Baishideng, BMC, Springer Nature</p>
+            </div>
+
+            <div class="relative pl-8 md:pl-12">
+                <div class="absolute -left-[14px] top-1 w-6 h-6 rounded-full bg-theme-blue border-4 border-theme-dark"></div>
+                <span class="text-xs font-mono text-theme-blue font-bold uppercase">Mar 2025 – Present</span>
+                <h3 class="text-2xl font-bold text-theme-dark mt-1">Project Director Hepatitis A, E & Typhoid</h3>
+                <p class="text-sm text-theme-dark font-medium">VFAHT-SIMS</p>
+            </div>
+            
+            <div class="relative pl-8 md:pl-12">
+                <div class="absolute -left-[14px] top-1 w-6 h-6 rounded-full bg-theme-dark border-4 border-theme-dark"></div>
+                <span class="text-xs font-mono text-theme-dark font-bold uppercase">Feb 2022 – May 2027</span>
+                <h3 class="text-2xl font-bold text-theme-dark mt-1">Medical Student (MBBS)</h3>
+                <p class="text-sm text-theme-dark font-medium">Services Institute of Medical Sciences (SIMS)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS & CERTIFICATIONS FANNED STACK WITH HOVER ELEVATION -->
+    <section id="skills" class="py-24 px-6 md:px-12 max-w-7xl mx-auto reveal overflow-hidden">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl sm:text-5xl font-bold text-theme-dark mb-4">Skills & Certifications</h2>
+            <p class="text-sm font-mono text-theme-dark/70">Hover over any card to elevate and preview details.</p>
+        </div>
+
+        <div class="relative max-w-5xl mx-auto h-[440px] flex items-center justify-center mt-12" id="skills-deck">
+            
+            <!-- Card 1: Orange -->
+            <div class="absolute w-[280px] sm:w-[320px] h-[390px] p-8 bg-theme-orange text-theme-cream solid-card fanned-card cursor-pointer z-[1]" style="transform: translateX(-180px) rotate(-8deg) translateY(15px);">
+                <div class="w-12 h-12 rounded-xl bg-theme-cream border-2 border-theme-dark flex items-center justify-center mb-6">
+                    <i data-lucide="code" class="w-6 h-6 text-theme-dark"></i>
+                </div>
+                <span class="font-mono text-xs font-bold tracking-widest text-theme-cream uppercase mb-2 block">01 / Methodology</span>
+                <h3 class="text-3xl font-bold mb-4">Top Skills</h3>
+                <ul class="space-y-3 font-medium text-sm">
+                    <li>• Clinical Research</li>
+                    <li>• Qualitative Research</li>
+                    <li>• Design Research</li>
+                    <li>• R Programming</li>
+                </ul>
+            </div>
+
+            <!-- Card 2: Green -->
+            <div class="absolute w-[280px] sm:w-[320px] h-[390px] p-8 bg-theme-green text-theme-cream solid-card fanned-card cursor-pointer z-[2]" style="transform: translateX(-90px) rotate(-4deg) translateY(8px);">
+                <div class="w-12 h-12 rounded-xl bg-theme-cream border-2 border-theme-dark flex items-center justify-center mb-6">
+                    <i data-lucide="file-check" class="w-6 h-6 text-theme-dark"></i>
+                </div>
+                <span class="font-mono text-xs font-bold tracking-widest text-theme-cream uppercase mb-2 block">02 / Design</span>
+                <h3 class="text-3xl font-bold mb-4">Research</h3>
+                <p class="font-medium text-sm leading-relaxed">
+                    Executing comprehensive systematic reviews, meta-analyses, and real-world data studies related to internal medicine and targeted oncology.
+                </p>
+            </div>
+
+            <!-- Card 3: Cream -->
+            <div class="absolute w-[280px] sm:w-[320px] h-[390px] p-8 bg-theme-cream text-theme-dark solid-card fanned-card cursor-pointer z-[3]" style="transform: translateX(0px) rotate(0deg) translateY(0px);">
+                <div class="w-12 h-12 rounded-xl bg-theme-cream border-2 border-theme-dark flex items-center justify-center mb-6">
+                    <i data-lucide="award" class="w-6 h-6 text-theme-orange"></i>
+                </div>
+                <span class="font-mono text-xs font-bold tracking-widest text-theme-orange uppercase mb-2 block">03 / Credentials</span>
+                <h3 class="text-3xl font-bold mb-4">Certifications</h3>
+                <ul class="space-y-3 font-medium text-sm">
+                    <li>• Meta-analysis Masterclass</li>
+                    <li>• Level 1 workshop</li>
+                    <li>• Understanding research methodology</li>
+                </ul>
+            </div>
+
+            <!-- Card 4: Blue -->
+            <div class="absolute w-[280px] sm:w-[320px] h-[390px] p-8 bg-theme-blue text-theme-cream solid-card fanned-card cursor-pointer z-[4]" style="transform: translateX(90px) rotate(4deg) translateY(8px);">
+                <div class="w-12 h-12 rounded-xl bg-theme-cream border-2 border-theme-dark flex items-center justify-center mb-6">
+                    <i data-lucide="users" class="w-6 h-6 text-theme-dark"></i>
+                </div>
+                <span class="font-mono text-xs font-bold tracking-widest text-theme-cream uppercase mb-2 block">04 / Editorial</span>
+                <h3 class="text-3xl font-bold mb-4">Peer Reviewer</h3>
+                <p class="font-medium text-sm leading-relaxed">
+                    Active peer reviewer for Springer Nature, BMC, Baishideng Publishing Group, and Web of Science.
+                </p>
+            </div>
+
+            <!-- Card 5: Dark -->
+            <div class="absolute w-[280px] sm:w-[320px] h-[390px] p-8 bg-theme-dark text-theme-cream solid-card fanned-card cursor-pointer z-[5]" style="transform: translateX(180px) rotate(8deg) translateY(15px);">
+                <div class="w-12 h-12 rounded-xl bg-theme-cream border-2 border-theme-dark flex items-center justify-center mb-6">
+                    <i data-lucide="sparkles" class="w-6 h-6 text-theme-green"></i>
+                </div>
+                <span class="font-mono text-xs font-bold tracking-widest text-theme-green uppercase mb-2 block">05 / Recognition</span>
+                <h3 class="text-3xl font-bold mb-4">Honors</h3>
+                <ul class="space-y-3 font-medium text-sm">
+                    <li>• Distinction Awardee</li>
+                    <li>• VP SIMS-LC (IFMSA-Pakistan)</li>
+                    <li>• Country Coordinator (Global Alliance)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION WITH EXACT PILL BUTTONS -->
+    <section id="contact" class="py-32 px-6 md:px-12 max-w-5xl mx-auto reveal text-center">
+        <h2 class="text-4xl sm:text-6xl font-bold text-theme-dark mb-12">Let's talk</h2>
+        
+        <div class="flex flex-wrap items-center justify-center gap-6">
+            <!-- LinkedIn Pill -->
+            <a href="https://www.linkedin.com/in/muhammad-ansab-545131280" target="_blank" class="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-theme-cream border-[3px] border-theme-dark text-theme-dark font-bold text-xl hover:bg-theme-dark hover:text-theme-cream transition-colors group shadow-[4px_4px_0px_0px_#191919]">
+                <svg class="w-6 h-6 fill-current text-theme-blue group-hover:text-theme-cream transition-colors" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <span>LinkedIn</span>
+            </a>
+            
+            <!-- Email Pill -->
+            <a href="mailto:ansabilyas1.4@gmail.com" class="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-theme-cream border-[3px] border-theme-dark text-theme-dark font-bold text-xl hover:bg-theme-dark hover:text-theme-cream transition-colors group shadow-[4px_4px_0px_0px_#191919]">
+                <svg class="w-6 h-6 stroke-current text-theme-orange group-hover:text-theme-cream transition-colors" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                <span>Email</span>
+            </a>
+
+            <!-- Contact Pill -->
+            <a href="tel:+923246427446" class="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-theme-cream border-[3px] border-theme-dark text-theme-dark font-bold text-xl hover:bg-theme-dark hover:text-theme-cream transition-colors group shadow-[4px_4px_0px_0px_#191919]">
+                <svg class="w-6 h-6 stroke-current text-theme-green group-hover:text-theme-cream transition-colors" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <span>Contact</span>
+            </a>
+        </div>
+    </section>
+
+    <footer class="py-12 px-6 md:px-12 text-center text-sm font-bold text-theme-dark bg-theme-cream border-t-2 border-theme-dark/10">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>© 2026 Muhammad Ansab. All rights reserved.</p>
+            <a href="#hero" class="hover:text-theme-orange transition-colors">Back to Top ↑</a>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // Scroll Reveal Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
