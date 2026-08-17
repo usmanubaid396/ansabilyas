@@ -175,7 +175,7 @@
         </div>
     </section>
 
-    <!-- PUBLICATIONS SECTION: ULTRA-MINIMALIST EDITORIAL LIST -->
+    <!-- PUBLICATIONS SECTION: ULTRA-MINIMALIST INDEX LIST WITH VIEW ALL TOGGLE -->
     <section id="publications" class="py-24 px-6 md:px-12 max-w-7xl mx-auto">
         <div class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-charcoal/15 pb-8">
             <div>
@@ -188,7 +188,7 @@
         </div>
 
         <!-- Minimalist Clean Index List -->
-        <div class="divide-y divide-charcoal/15 border-t border-b border-charcoal/15">
+        <div class="divide-y divide-charcoal/15 border-t border-charcoal/15">
             
             <!-- Paper 1 -->
             <a href="https://www.ovid.com/jnls/bloodcoagulation/abstract/10.1097/mbc.0000000000001352~comparing-fondaparinux-and-low-molecular-weight-heparin-for" target="_blank" class="pub-row py-8 px-4 flex flex-col md:flex-row md:items-center justify-between gap-6 group">
@@ -258,159 +258,172 @@
                 </div>
             </a>
 
-            <!-- Paper 5 -->
-            <a href="https://link.springer.com/article/10.1007/s00210-025-04482-4" target="_blank" class="pub-row py-8 px-4 flex flex-col md:flex-row md:items-center justify-between gap-6 group">
-                <div class="flex items-start md:items-center gap-8 md:gap-16">
-                    <span class="font-mono text-sm text-charcoal/40 font-medium">05</span>
-                    <div>
-                        <h3 class="font-serif text-xl sm:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1.5">Trends and Disparities in Heart Failure Mortality Among Hypertensive Older Adults in the United States</h3>
-                        <p class="text-xs sm:text-sm text-charcoal/60 font-light">A 22-year retrospective population-based analysis of cardiovascular mortality trends.</p>
+            <!-- Hidden Extra Publications (Revealed on "View all 13 publications" click) -->
+            <div id="extra-pubs" class="contents hidden">
+                
+                <!-- Paper 5 -->
+                <a href="https://link.springer.com/article/10.1007/s00210-025-04482-4" target="_blank" class="pub-row py-8 px-4 flex flex-col md:flex-row md:items-center justify-between gap-6 group">
+                    <div class="flex items-start md:items-center gap-8 md:gap-16">
+                        <span class="font-mono text-sm text-charcoal/40 font-medium">05</span>
+                        <div>
+                            <h3 class="font-serif text-xl sm:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1.5">Trends and Disparities in Heart Failure Mortality Among Hypertensive Older Adults in the United States</h3>
+                            <p class="text-xs sm:text-sm text-charcoal/60 font-light">A 22-year retrospective population-based analysis of cardiovascular mortality trends.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="flex items-center justify-between md:justify-end gap-6 shrink-0">
-                    <span class="text-xs font-mono text-emerald font-semibold uppercase tracking-wider">Retrospective Study • 2025</span>
-                    <div class="arrow-icon w-10 h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    <div class="flex items-center justify-between md:justify-end gap-6 shrink-0">
+                        <span class="text-xs font-mono text-emerald font-semibold uppercase tracking-wider">Retrospective Study • 2025</span>
+                        <div class="arrow-icon w-10 h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
 
-            <!-- Paper 6 -->
-            <a href="https://link.springer.com/article/10.1007/s00234-025-03688-w" target="_blank" class="pub-row py-8 px-4 flex flex-col md:flex-row md:items-center justify-between gap-6 group">
-                <div class="flex items-start md:items-center gap-8 md:gap-16">
-                    <span class="font-mono text-sm text-charcoal/40 font-medium">06</span>
-                    <div>
-                        <h3 class="font-serif text-xl sm:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1.5">Thermal ablation versus surgical resection for colorectal liver metastases</h3>
-                        <p class="text-xs sm:text-sm text-charcoal/60 font-light">A GRADE-assessed systematic review and meta-analysis of hepatic resection outcomes.</p>
+                <!-- Paper 6 -->
+                <a href="https://link.springer.com/article/10.1007/s00234-025-03688-w" target="_blank" class="pub-row py-8 px-4 flex flex-col md:flex-row md:items-center justify-between gap-6 group">
+                    <div class="flex items-start md:items-center gap-8 md:gap-16">
+                        <span class="font-mono text-sm text-charcoal/40 font-medium">06</span>
+                        <div>
+                            <h3 class="font-serif text-xl sm:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1.5">Thermal ablation versus surgical resection for colorectal liver metastases</h3>
+                            <p class="text-xs sm:text-sm text-charcoal/60 font-light">A GRADE-assessed systematic review and meta-analysis of hepatic resection outcomes.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="flex items-center justify-between md:justify-end gap-6 shrink-0">
-                    <span class="text-xs font-mono text-terracotta font-semibold uppercase tracking-wider">Systematic Review • 2025</span>
-                    <div class="arrow-icon w-10 h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    <div class="flex items-center justify-between md:justify-end gap-6 shrink-0">
+                        <span class="text-xs font-mono text-terracotta font-semibold uppercase tracking-wider">Systematic Review • 2025</span>
+                        <div class="arrow-icon w-10 h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
 
-            <!-- Paper 7 -->
-            <a href="https://link.springer.com/article/10.1186/s12885-025-14482-5" target="_blank" class="pub-row py-8 px-4 flex flex-col md:flex-row md:items-center justify-between gap-6 group">
-                <div class="flex items-start md:items-center gap-8 md:gap-16">
-                    <span class="font-mono text-sm text-charcoal/40 font-medium">07</span>
-                    <div>
-                        <h3 class="font-serif text-xl sm:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1.5">Direct oral anticoagulant dose vs dual antiplatelet therapy after left atrial appendage closure</h3>
-                        <p class="text-xs sm:text-sm text-charcoal/60 font-light">Comparative systematic review and pooled analysis of post-procedural regimens.</p>
+                <!-- Paper 7 -->
+                <a href="https://link.springer.com/article/10.1186/s12885-025-14482-5" target="_blank" class="pub-row py-8 px-4 flex flex-col md:flex-row md:items-center justify-between gap-6 group">
+                    <div class="flex items-start md:items-center gap-8 md:gap-16">
+                        <span class="font-mono text-sm text-charcoal/40 font-medium">07</span>
+                        <div>
+                            <h3 class="font-serif text-xl sm:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1.5">Direct oral anticoagulant dose vs dual antiplatelet therapy after left atrial appendage closure</h3>
+                            <p class="text-xs sm:text-sm text-charcoal/60 font-light">Comparative systematic review and pooled analysis of post-procedural regimens.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="flex items-center justify-between md:justify-end gap-6 shrink-0">
-                    <span class="text-xs font-mono text-emerald font-semibold uppercase tracking-wider">Meta-Analysis • 2025</span>
-                    <div class="arrow-icon w-10 h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    <div class="flex items-center justify-between md:justify-end gap-6 shrink-0">
+                        <span class="text-xs font-mono text-emerald font-semibold uppercase tracking-wider">Meta-Analysis • 2025</span>
+                        <div class="arrow-icon w-10 h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
 
-            <!-- Paper 8 -->
-            <a href="https://onlinelibrary.wiley.com/doi/10.1111/jch.70064" target="_blank" class="pub-row py-8 px-4 flex flex-col md:flex-row md:items-center justify-between gap-6 group">
-                <div class="flex items-start md:items-center gap-8 md:gap-16">
-                    <span class="font-mono text-sm text-charcoal/40 font-medium">08</span>
-                    <div>
-                        <h3 class="font-serif text-xl sm:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1.5">Clinical impact of high-dose esomeprazole-amoxicillin dual therapy as rescue treatment for H. pylori</h3>
-                        <p class="text-xs sm:text-sm text-charcoal/60 font-light">Evaluating eradication efficacy in refractory upper gastrointestinal infections.</p>
+                <!-- Paper 8 -->
+                <a href="https://onlinelibrary.wiley.com/doi/10.1111/jch.70064" target="_blank" class="pub-row py-8 px-4 flex flex-col md:flex-row md:items-center justify-between gap-6 group">
+                    <div class="flex items-start md:items-center gap-8 md:gap-16">
+                        <span class="font-mono text-sm text-charcoal/40 font-medium">08</span>
+                        <div>
+                            <h3 class="font-serif text-xl sm:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1.5">Clinical impact of high-dose esomeprazole-amoxicillin dual therapy as rescue treatment for H. pylori</h3>
+                            <p class="text-xs sm:text-sm text-charcoal/60 font-light">Evaluating eradication efficacy in refractory upper gastrointestinal infections.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="flex items-center justify-between md:justify-end gap-6 shrink-0">
-                    <span class="text-xs font-mono text-bluecard font-semibold uppercase tracking-wider">Clinical Trial • 2025</span>
-                    <div class="arrow-icon w-10 h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    <div class="flex items-center justify-between md:justify-end gap-6 shrink-0">
+                        <span class="text-xs font-mono text-bluecard font-semibold uppercase tracking-wider">Clinical Trial • 2025</span>
+                        <div class="arrow-icon w-10 h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
 
-            <!-- Paper 9 -->
-            <a href="https://www.sciencedirect.com/science/article/pii/S2772609625000292" target="_blank" class="pub-row py-8 px-4 flex flex-col md:flex-row md:items-center justify-between gap-6 group">
-                <div class="flex items-start md:items-center gap-8 md:gap-16">
-                    <span class="font-mono text-sm text-charcoal/40 font-medium">09</span>
-                    <div>
-                        <h3 class="font-serif text-xl sm:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1.5">TROP-2–Directed Antibody–Drug Conjugates in Advanced NSCLC</h3>
-                        <p class="text-xs sm:text-sm text-charcoal/60 font-light">Meta-analysis of efficacy, safety profiles, and reconstructed survival outcomes.</p>
+                <!-- Paper 9 -->
+                <a href="https://www.sciencedirect.com/science/article/pii/S2772609625000292" target="_blank" class="pub-row py-8 px-4 flex flex-col md:flex-row md:items-center justify-between gap-6 group">
+                    <div class="flex items-start md:items-center gap-8 md:gap-16">
+                        <span class="font-mono text-sm text-charcoal/40 font-medium">09</span>
+                        <div>
+                            <h3 class="font-serif text-xl sm:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1.5">TROP-2–Directed Antibody–Drug Conjugates in Advanced NSCLC</h3>
+                            <p class="text-xs sm:text-sm text-charcoal/60 font-light">Meta-analysis of efficacy, safety profiles, and reconstructed survival outcomes.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="flex items-center justify-between md:justify-end gap-6 shrink-0">
-                    <span class="text-xs font-mono text-terracotta font-semibold uppercase tracking-wider">Oncology • 2025</span>
-                    <div class="arrow-icon w-10 h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    <div class="flex items-center justify-between md:justify-end gap-6 shrink-0">
+                        <span class="text-xs font-mono text-terracotta font-semibold uppercase tracking-wider">Oncology • 2025</span>
+                        <div class="arrow-icon w-10 h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
 
-            <!-- Paper 10 -->
-            <a href="https://www.sciencedirect.com/science/article/abs/pii/S0147956325000457" target="_blank" class="pub-row py-8 px-4 flex flex-col md:flex-row md:items-center justify-between gap-6 group">
-                <div class="flex items-start md:items-center gap-8 md:gap-16">
-                    <span class="font-mono text-sm text-charcoal/40 font-medium">10</span>
-                    <div>
-                        <h3 class="font-serif text-xl sm:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1.5">Intravenous thrombolysis as an adjunct to endovascular thrombectomy in acute basilar artery occlusion</h3>
-                        <p class="text-xs sm:text-sm text-charcoal/60 font-light">GRADE-assessed systematic review and meta-analysis of neurovascular outcomes.</p>
+                <!-- Paper 10 -->
+                <a href="https://www.sciencedirect.com/science/article/abs/pii/S0147956325000457" target="_blank" class="pub-row py-8 px-4 flex flex-col md:flex-row md:items-center justify-between gap-6 group">
+                    <div class="flex items-start md:items-center gap-8 md:gap-16">
+                        <span class="font-mono text-sm text-charcoal/40 font-medium">10</span>
+                        <div>
+                            <h3 class="font-serif text-xl sm:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1.5">Intravenous thrombolysis as an adjunct to endovascular thrombectomy in acute basilar artery occlusion</h3>
+                            <p class="text-xs sm:text-sm text-charcoal/60 font-light">GRADE-assessed systematic review and meta-analysis of neurovascular outcomes.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="flex items-center justify-between md:justify-end gap-6 shrink-0">
-                    <span class="text-xs font-mono text-terracotta font-semibold uppercase tracking-wider">Cardiology • 2025</span>
-                    <div class="arrow-icon w-10 h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    <div class="flex items-center justify-between md:justify-end gap-6 shrink-0">
+                        <span class="text-xs font-mono text-terracotta font-semibold uppercase tracking-wider">Cardiology • 2025</span>
+                        <div class="arrow-icon w-10 h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
 
-            <!-- Paper 11 -->
-            <a href="https://www.clinical-genitourinary-cancer.com/article/S1558-7673(24)00268-4/abstract" target="_blank" class="pub-row py-8 px-4 flex flex-col md:flex-row md:items-center justify-between gap-6 group">
-                <div class="flex items-start md:items-center gap-8 md:gap-16">
-                    <span class="font-mono text-sm text-charcoal/40 font-medium">11</span>
-                    <div>
-                        <h3 class="font-serif text-xl sm:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1.5">Neoadjuvant combination versus single-agent immune checkpoint inhibition in MSI-H/dMMR colorectal cancer</h3>
-                        <p class="text-xs sm:text-sm text-charcoal/60 font-light">Systematic review and meta-analysis on pathologic response rates.</p>
+                <!-- Paper 11 -->
+                <a href="https://www.clinical-genitourinary-cancer.com/article/S1558-7673(24)00268-4/abstract" target="_blank" class="pub-row py-8 px-4 flex flex-col md:flex-row md:items-center justify-between gap-6 group">
+                    <div class="flex items-start md:items-center gap-8 md:gap-16">
+                        <span class="font-mono text-sm text-charcoal/40 font-medium">11</span>
+                        <div>
+                            <h3 class="font-serif text-xl sm:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1.5">Neoadjuvant combination versus single-agent immune checkpoint inhibition in MSI-H/dMMR colorectal cancer</h3>
+                            <p class="text-xs sm:text-sm text-charcoal/60 font-light">Systematic review and meta-analysis on pathologic response rates.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="flex items-center justify-between md:justify-end gap-6 shrink-0">
-                    <span class="text-xs font-mono text-emerald font-semibold uppercase tracking-wider">Oncology • 2024</span>
-                    <div class="arrow-icon w-10 h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    <div class="flex items-center justify-between md:justify-end gap-6 shrink-0">
+                        <span class="text-xs font-mono text-emerald font-semibold uppercase tracking-wider">Oncology • 2024</span>
+                        <div class="arrow-icon w-10 h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
 
-            <!-- Paper 12 -->
-            <a href="https://link.springer.com/article/10.1007/s00210-025-04388-1" target="_blank" class="pub-row py-8 px-4 flex flex-col md:flex-row md:items-center justify-between gap-6 group">
-                <div class="flex items-start md:items-center gap-8 md:gap-16">
-                    <span class="font-mono text-sm text-charcoal/40 font-medium">12</span>
-                    <div>
-                        <h3 class="font-serif text-xl sm:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1.5">Efficacy of Aldosterone Synthase Inhibitors in Uncontrolled and Resistant Hypertension</h3>
-                        <p class="text-xs sm:text-sm text-charcoal/60 font-light">Updated systematic review and meta-analysis on blood pressure reduction.</p>
+                <!-- Paper 12 -->
+                <a href="https://link.springer.com/article/10.1007/s00210-025-04388-1" target="_blank" class="pub-row py-8 px-4 flex flex-col md:flex-row md:items-center justify-between gap-6 group">
+                    <div class="flex items-start md:items-center gap-8 md:gap-16">
+                        <span class="font-mono text-sm text-charcoal/40 font-medium">12</span>
+                        <div>
+                            <h3 class="font-serif text-xl sm:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1.5">Efficacy of Aldosterone Synthase Inhibitors in Uncontrolled and Resistant Hypertension</h3>
+                            <p class="text-xs sm:text-sm text-charcoal/60 font-light">Updated systematic review and meta-analysis on blood pressure reduction.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="flex items-center justify-between md:justify-end gap-6 shrink-0">
-                    <span class="text-xs font-mono text-bluecard font-semibold uppercase tracking-wider">Hypertension • 2025</span>
-                    <div class="arrow-icon w-10 h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    <div class="flex items-center justify-between md:justify-end gap-6 shrink-0">
+                        <span class="text-xs font-mono text-bluecard font-semibold uppercase tracking-wider">Hypertension • 2025</span>
+                        <div class="arrow-icon w-10 h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
 
-            <!-- Paper 13 -->
-            <a href="https://www.sciencedirect.com/science/article/abs/pii/S104084282500335X" target="_blank" class="pub-row py-8 px-4 flex flex-col md:flex-row md:items-center justify-between gap-6 group">
-                <div class="flex items-start md:items-center gap-8 md:gap-16">
-                    <span class="font-mono text-sm text-charcoal/40 font-medium">13</span>
-                    <div>
-                        <h3 class="font-serif text-xl sm:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1.5">Intravenous Thrombolysis Outcomes in Basilar Artery Occlusion</h3>
-                        <p class="text-xs sm:text-sm text-charcoal/60 font-light">Comprehensive analysis of mechanical thrombectomy adjuncts and recovery rates.</p>
+                <!-- Paper 13 -->
+                <a href="https://www.sciencedirect.com/science/article/abs/pii/S104084282500335X" target="_blank" class="pub-row py-8 px-4 flex flex-col md:flex-row md:items-center justify-between gap-6 group">
+                    <div class="flex items-start md:items-center gap-8 md:gap-16">
+                        <span class="font-mono text-sm text-charcoal/40 font-medium">13</span>
+                        <div>
+                            <h3 class="font-serif text-xl sm:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1.5">Intravenous Thrombolysis Outcomes in Basilar Artery Occlusion</h3>
+                            <p class="text-xs sm:text-sm text-charcoal/60 font-light">Comprehensive analysis of mechanical thrombectomy adjuncts and recovery rates.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="flex items-center justify-between md:justify-end gap-6 shrink-0">
-                    <span class="text-xs font-mono text-terracotta font-semibold uppercase tracking-wider">Neurology • 2025</span>
-                    <div class="arrow-icon w-10 h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    <div class="flex items-center justify-between md:justify-end gap-6 shrink-0">
+                        <span class="text-xs font-mono text-terracotta font-semibold uppercase tracking-wider">Neurology • 2025</span>
+                        <div class="arrow-icon w-10 h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
 
+            </div>
+
+        </div>
+
+        <!-- View All 13 Publications Toggle Button -->
+        <div class="mt-12 text-center">
+            <button id="toggle-pubs-btn" onclick="togglePubs()" class="inline-flex items-center gap-2 px-8 py-4 rounded-full text-xs font-mono font-semibold bg-cream text-charcoal border border-charcoal/20 hover:border-charcoal hover:bg-charcoal/5 transition-all shadow-sm">
+                <span id="toggle-text">View all 13 publications</span>
+                <svg id="toggle-icon" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </button>
         </div>
     </section>
 
@@ -597,7 +610,7 @@
         </div>
     </footer>
 
-    <!-- INTERACTION SCRIPTS: Minimalist 3D Parallax -->
+    <!-- INTERACTION SCRIPTS -->
     <script>
         // Minimalist 3D Parallax Background Interaction
         document.addEventListener('mousemove', (e) => {
@@ -609,6 +622,23 @@
                 layer.style.transform = `translate(${x * (speed / 10)}px, ${y * (speed / 10)}px)`;
             });
         });
+
+        // Toggle View All Publications Logic
+        function togglePubs() {
+            const extraPubs = document.getElementById('extra-pubs');
+            const toggleText = document.getElementById('toggle-text');
+            const toggleIcon = document.getElementById('toggle-icon');
+
+            if (extraPubs.classList.contains('hidden')) {
+                extraPubs.classList.remove('hidden');
+                toggleText.innerText = 'Show fewer publications';
+                toggleIcon.style.transform = 'rotate(180deg)';
+            } else {
+                extraPubs.classList.add('hidden');
+                toggleText.innerText = 'View all 13 publications';
+                toggleIcon.style.transform = 'rotate(0deg)';
+            }
+        }
     </script>
 
 </body>
