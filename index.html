@@ -43,21 +43,13 @@
             overflow-x: hidden;
             letter-spacing: -0.01em;
         }
-        /* Hide scrollbar for clean horizontal snap container */
+        /* Hide scrollbar for clean horizontal track */
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
         .no-scrollbar {
             -ms-overflow-style: none;
             scrollbar-width: none;
-        }
-        /* Smooth Scroll Snap Track */
-        .scroll-snap-track {
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-        }
-        .scroll-snap-item {
-            scroll-snap-align: start;
         }
         /* Fanned Card Hover Physics */
         .fanned-card {
@@ -184,16 +176,16 @@
                 <h2 class="font-serif text-4xl sm:text-6xl font-bold text-charcoal">Featured Publications (13)</h2>
             </div>
             <p class="text-charcoal/60 text-base max-w-md font-light leading-relaxed">
-                Explore the complete collection of peer-reviewed research papers and meta-analyses. Scroll smoothly or drag horizontally to browse.
+                Explore the complete collection of peer-reviewed research papers and meta-analyses. Glide smoothly through using your mouse wheel or dragging.
             </p>
         </div>
 
         <!-- Scrollable Horizontal Editorial Track -->
-        <div id="pub-scroll-container" class="w-full overflow-x-auto no-scrollbar py-6 px-6 md:px-12 cursor-grab active:cursor-grabbing select-none scroll-snap-track">
+        <div id="pub-scroll-container" class="w-full overflow-x-auto no-scrollbar py-6 px-6 md:px-12 cursor-grab active:cursor-grabbing select-none">
             <div class="flex gap-8 w-max">
                 
                 <!-- Paper 1 -->
-                <div class="scroll-snap-item w-[450px] sm:w-[540px] bg-charcoal text-cream p-10 sm:p-12 rounded-[2.5rem] shadow-2xl flex flex-col justify-between border border-charcoal/20 shrink-0">
+                <div class="w-[450px] sm:w-[540px] bg-charcoal text-cream p-10 sm:p-12 rounded-[2.5rem] shadow-2xl flex flex-col justify-between border border-charcoal/20 shrink-0">
                     <div>
                         <div class="flex items-center justify-between mb-6">
                             <span class="px-3.5 py-1.5 rounded-full text-xs font-mono bg-terracotta/20 text-terracotta font-semibold tracking-wide">Meta-Analysis</span>
@@ -208,7 +200,7 @@
                 </div>
 
                 <!-- Paper 2 -->
-                <div class="scroll-snap-item w-[450px] sm:w-[540px] bg-terracotta text-cream p-10 sm:p-12 rounded-[2.5rem] shadow-2xl flex flex-col justify-between shrink-0">
+                <div class="w-[450px] sm:w-[540px] bg-terracotta text-cream p-10 sm:p-12 rounded-[2.5rem] shadow-2xl flex flex-col justify-between shrink-0">
                     <div>
                         <div class="flex items-center justify-between mb-6">
                             <span class="px-3.5 py-1.5 rounded-full text-xs font-mono bg-charcoal/20 text-cream font-semibold tracking-wide">Meta-Analysis</span>
@@ -223,7 +215,7 @@
                 </div>
 
                 <!-- Paper 3 -->
-                <div class="scroll-snap-item w-[450px] sm:w-[540px] bg-emerald text-cream p-10 sm:p-12 rounded-[2.5rem] shadow-2xl flex flex-col justify-between shrink-0">
+                <div class="w-[450px] sm:w-[540px] bg-emerald text-cream p-10 sm:p-12 rounded-[2.5rem] shadow-2xl flex flex-col justify-between shrink-0">
                     <div>
                         <div class="flex items-center justify-between mb-6">
                             <span class="px-3.5 py-1.5 rounded-full text-xs font-mono bg-charcoal/20 text-cream font-semibold tracking-wide">Systematic Review</span>
@@ -238,7 +230,7 @@
                 </div>
 
                 <!-- Paper 4 -->
-                <div class="scroll-snap-item w-[450px] sm:w-[540px] bg-bluecard text-cream p-10 sm:p-12 rounded-[2.5rem] shadow-2xl flex flex-col justify-between shrink-0">
+                <div class="w-[450px] sm:w-[540px] bg-bluecard text-cream p-10 sm:p-12 rounded-[2.5rem] shadow-2xl flex flex-col justify-between shrink-0">
                     <div>
                         <div class="flex items-center justify-between mb-6">
                             <span class="px-3.5 py-1.5 rounded-full text-xs font-mono bg-charcoal/20 text-cream font-semibold tracking-wide">Oncology Research</span>
@@ -253,7 +245,7 @@
                 </div>
 
                 <!-- Paper 5 -->
-                <div class="scroll-snap-item w-[450px] sm:w-[540px] bg-charcoal text-cream p-10 sm:p-12 rounded-[2.5rem] shadow-2xl flex flex-col justify-between border border-charcoal/20 shrink-0">
+                <div class="w-[450px] sm:w-[540px] bg-charcoal text-cream p-10 sm:p-12 rounded-[2.5rem] shadow-2xl flex flex-col justify-between border border-charcoal/20 shrink-0">
                     <div>
                         <div class="flex items-center justify-between mb-6">
                             <span class="px-3.5 py-1.5 rounded-full text-xs font-mono bg-emerald/20 text-emerald font-semibold tracking-wide">Retrospective Study</span>
@@ -268,7 +260,7 @@
                 </div>
 
                 <!-- Paper 6 -->
-                <div class="scroll-snap-item w-[450px] sm:w-[540px] bg-terracotta text-cream p-10 sm:p-12 rounded-[2.5rem] shadow-2xl flex flex-col justify-between shrink-0">
+                <div class="w-[450px] sm:w-[540px] bg-terracotta text-cream p-10 sm:p-12 rounded-[2.5rem] shadow-2xl flex flex-col justify-between shrink-0">
                     <div>
                         <div class="flex items-center justify-between mb-6">
                             <span class="px-3.5 py-1.5 rounded-full text-xs font-mono bg-charcoal/20 text-cream font-semibold tracking-wide">Systematic Review</span>
@@ -283,7 +275,7 @@
                 </div>
 
                 <!-- Paper 7 -->
-                <div class="scroll-snap-item w-[450px] sm:w-[540px] bg-emerald text-cream p-10 sm:p-12 rounded-[2.5rem] shadow-2xl flex flex-col justify-between shrink-0">
+                <div class="w-[450px] sm:w-[540px] bg-emerald text-cream p-10 sm:p-12 rounded-[2.5rem] shadow-2xl flex flex-col justify-between shrink-0">
                     <div>
                         <div class="flex items-center justify-between mb-6">
                             <span class="px-3.5 py-1.5 rounded-full text-xs font-mono bg-charcoal/20 text-cream font-semibold tracking-wide">Meta-Analysis</span>
@@ -298,7 +290,7 @@
                 </div>
 
                 <!-- Paper 8 -->
-                <div class="scroll-snap-item w-[450px] sm:w-[540px] bg-bluecard text-cream p-10 sm:p-12 rounded-[2.5rem] shadow-2xl flex flex-col justify-between shrink-0">
+                <div class="w-[450px] sm:w-[540px] bg-bluecard text-cream p-10 sm:p-12 rounded-[2.5rem] shadow-2xl flex flex-col justify-between shrink-0">
                     <div>
                         <div class="flex items-center justify-between mb-6">
                             <span class="px-3.5 py-1.5 rounded-full text-xs font-mono bg-charcoal/20 text-cream font-semibold tracking-wide">Clinical Trial Review</span>
@@ -313,7 +305,7 @@
                 </div>
 
                 <!-- Paper 9 -->
-                <div class="scroll-snap-item w-[450px] sm:w-[540px] bg-charcoal text-cream p-10 sm:p-12 rounded-[2.5rem] shadow-2xl flex flex-col justify-between shrink-0">
+                <div class="w-[450px] sm:w-[540px] bg-charcoal text-cream p-10 sm:p-12 rounded-[2.5rem] shadow-2xl flex flex-col justify-between shrink-0">
                     <div>
                         <div class="flex items-center justify-between mb-6">
                             <span class="px-3.5 py-1.5 rounded-full text-xs font-mono bg-terracotta/20 text-terracotta font-semibold tracking-wide">Oncology</span>
@@ -328,7 +320,7 @@
                 </div>
 
                 <!-- Paper 10 -->
-                <div class="scroll-snap-item w-[450px] sm:w-[540px] bg-terracotta text-cream p-10 sm:p-12 rounded-[2.5rem] shadow-2xl flex flex-col justify-between shrink-0">
+                <div class="w-[450px] sm:w-[540px] bg-terracotta text-cream p-10 sm:p-12 rounded-[2.5rem] shadow-2xl flex flex-col justify-between shrink-0">
                     <div>
                         <div class="flex items-center justify-between mb-6">
                             <span class="px-3.5 py-1.5 rounded-full text-xs font-mono bg-charcoal/20 text-cream font-semibold tracking-wide">Cardiology</span>
@@ -343,7 +335,7 @@
                 </div>
 
                 <!-- Paper 11 -->
-                <div class="scroll-snap-item w-[450px] sm:w-[540px] bg-emerald text-cream p-10 sm:p-12 rounded-[2.5rem] shadow-2xl flex flex-col justify-between shrink-0">
+                <div class="w-[450px] sm:w-[540px] bg-emerald text-cream p-10 sm:p-12 rounded-[2.5rem] shadow-2xl flex flex-col justify-between shrink-0">
                     <div>
                         <div class="flex items-center justify-between mb-6">
                             <span class="px-3.5 py-1.5 rounded-full text-xs font-mono bg-charcoal/20 text-cream font-semibold tracking-wide">Oncology</span>
@@ -358,7 +350,7 @@
                 </div>
 
                 <!-- Paper 12 -->
-                <div class="scroll-snap-item w-[450px] sm:w-[540px] bg-bluecard text-cream p-10 sm:p-12 rounded-[2.5rem] shadow-2xl flex flex-col justify-between shrink-0">
+                <div class="w-[450px] sm:w-[540px] bg-bluecard text-cream p-10 sm:p-12 rounded-[2.5rem] shadow-2xl flex flex-col justify-between shrink-0">
                     <div>
                         <div class="flex items-center justify-between mb-6">
                             <span class="px-3.5 py-1.5 rounded-full text-xs font-mono bg-charcoal/20 text-cream font-semibold tracking-wide">Hypertension</span>
@@ -373,7 +365,7 @@
                 </div>
 
                 <!-- Paper 13 -->
-                <div class="scroll-snap-item w-[450px] sm:w-[540px] bg-charcoal text-cream p-10 sm:p-12 rounded-[2.5rem] shadow-2xl flex flex-col justify-between shrink-0">
+                <div class="w-[450px] sm:w-[540px] bg-charcoal text-cream p-10 sm:p-12 rounded-[2.5rem] shadow-2xl flex flex-col justify-between shrink-0">
                     <div>
                         <div class="flex items-center justify-between mb-6">
                             <span class="px-3.5 py-1.5 rounded-full text-xs font-mono bg-terracotta/20 text-terracotta font-semibold tracking-wide">Neurology</span>
@@ -587,17 +579,25 @@
             });
         });
 
-        // Professional Slow Wheel Scrolling for Publications Track
+        // Professional Smart Wheel Scrolling for Publications Track with Boundary Release
         const pubContainer = document.getElementById('pub-scroll-container');
         pubContainer.addEventListener('wheel', (evt) => {
             if (evt.deltaY !== 0) {
+                const atStart = pubContainer.scrollLeft <= 0;
+                const atEnd = pubContainer.scrollLeft >= pubContainer.scrollWidth - pubContainer.clientWidth - 5;
+
+                // If at boundaries and trying to scroll further outward, let the page scroll normally
+                if ((atStart && evt.deltaY < 0) || (atEnd && evt.deltaY > 0)) {
+                    return; 
+                }
+
                 evt.preventDefault();
                 pubContainer.scrollBy({
-                    left: evt.deltaY * 0.6,
+                    left: evt.deltaY * 0.75,
                     behavior: 'smooth'
                 });
             }
-        });
+        }, { passive: false });
 
         // Drag to scroll functionality for mouse users
         let isDown = false;
@@ -625,7 +625,7 @@
             if (!isDown) return;
             e.preventDefault();
             const x = e.pageX - pubContainer.offsetLeft;
-            const walk = (x - startX) * 1.2;
+            const walk = (x - startX) * 1.5;
             pubContainer.scrollLeft = scrollLeft - walk;
         });
     </script>
