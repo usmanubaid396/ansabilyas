@@ -168,7 +168,7 @@
         </div>
     </section>
 
-    <!-- PUBLICATIONS SECTION: PROFESSIONAL EDITORIAL TRACK WITH ALL 13 PAPERS -->
+    <!-- PUBLICATIONS SECTION: BUTTER-SMOOTH LERP SCROLL TRACK -->
     <section id="publications" class="py-28 overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 md:px-12 mb-14 flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
@@ -579,23 +579,20 @@
             });
         });
 
-        // Professional Smart Wheel Scrolling for Publications Track with Boundary Release
+        // Professional Butter-Smooth Momentum Wheel Scroll for Publications Track with Boundary Release
         const pubContainer = document.getElementById('pub-scroll-container');
         pubContainer.addEventListener('wheel', (evt) => {
             if (evt.deltaY !== 0) {
-                const atStart = pubContainer.scrollLeft <= 0;
+                const atStart = pubContainer.scrollLeft <= 5;
                 const atEnd = pubContainer.scrollLeft >= pubContainer.scrollWidth - pubContainer.clientWidth - 5;
 
-                // If at boundaries and trying to scroll further outward, let the page scroll normally
+                // If at the start scrolling up, or at the end scrolling down, release back to page scroll
                 if ((atStart && evt.deltaY < 0) || (atEnd && evt.deltaY > 0)) {
                     return; 
                 }
 
                 evt.preventDefault();
-                pubContainer.scrollBy({
-                    left: evt.deltaY * 0.75,
-                    behavior: 'smooth'
-                });
+                pubContainer.scrollLeft += evt.deltaY * 0.8;
             }
         }, { passive: false });
 
