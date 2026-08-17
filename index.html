@@ -43,13 +43,21 @@
             overflow-x: hidden;
             letter-spacing: -0.01em;
         }
-        /* Hide scrollbar for clean horizontal scroll container */
+        /* Hide scrollbar for clean horizontal snap container */
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
         .no-scrollbar {
             -ms-overflow-style: none;
             scrollbar-width: none;
+        }
+        /* Smooth Scroll Snap Track */
+        .scroll-snap-track {
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+        }
+        .scroll-snap-item {
+            scroll-snap-align: start;
         }
         /* Fanned Card Hover Physics */
         .fanned-card {
@@ -91,7 +99,7 @@
         </div>
     </header>
 
-    <!-- HERO SECTION WITH MINIMALIST 3D INTERACTION BENEATH -->
+    <!-- HERO SECTION -->
     <section id="hero" class="relative min-h-screen flex items-center pt-32 pb-20 px-6 md:px-12 overflow-hidden">
         
         <!-- Minimalist 3D Interactive Floating Shapes Beneath Layer -->
@@ -168,213 +176,93 @@
         </div>
     </section>
 
-    <!-- PUBLICATIONS SECTION: CURSOR / WHEEL SCROLLABLE HORIZONTAL TRACK -->
-    <section id="publications" class="py-24 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 md:px-12 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-4">
+    <!-- PUBLICATIONS SECTION: PROFESSIONAL SLOW-SCROLL EDITORIAL TRACK -->
+    <section id="publications" class="py-28 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 mb-14 flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
                 <span class="text-terracotta font-mono text-xs uppercase tracking-widest block mb-2">Peer-Reviewed Scholarship</span>
-                <h2 class="font-serif text-4xl sm:text-5xl font-bold text-charcoal">Featured Publications (13)</h2>
+                <h2 class="font-serif text-4xl sm:text-6xl font-bold text-charcoal">Featured Publications (13)</h2>
             </div>
-            <p class="text-charcoal/60 text-sm max-w-md">
-                Explore the complete collection of peer-reviewed research papers and meta-analyses. Use your mouse wheel or cursor to browse through smoothly.
+            <p class="text-charcoal/60 text-base max-w-md font-light leading-relaxed">
+                Explore peer-reviewed research papers and meta-analyses. Use your mouse wheel to glide smoothly through the collection.
             </p>
         </div>
 
-        <!-- Scrollable Horizontal Track Container (Driven by cursor wheel/scroll) -->
-        <div id="pub-scroll-container" class="w-full overflow-x-auto no-scrollbar py-4 px-6 md:px-12 cursor-grab active:cursor-grabbing select-none">
-            <div class="flex gap-6 w-max">
+        <!-- Scrollable Horizontal Editorial Track with Snap & Slow Dampened Scroll -->
+        <div id="pub-scroll-container" class="w-full overflow-x-auto no-scrollbar py-6 px-6 md:px-12 cursor-grab active:cursor-grabbing select-none scroll-snap-track">
+            <div class="flex gap-8 w-max">
                 
                 <!-- Paper 1 -->
-                <div class="w-[380px] sm:w-[420px] bg-charcoal text-cream p-8 rounded-3xl shadow-xl flex flex-col justify-between border border-charcoal/20 shrink-0">
+                <div class="scroll-snap-item w-[450px] sm:w-[540px] bg-charcoal text-cream p-10 sm:p-12 rounded-[2.5rem] shadow-2xl flex flex-col justify-between border border-charcoal/20 shrink-0">
                     <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full text-xs font-mono bg-terracotta/20 text-terracotta font-semibold">Meta-Analysis</span>
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="px-3.5 py-1.5 rounded-full text-xs font-mono bg-terracotta/20 text-terracotta font-semibold tracking-wide">Meta-Analysis</span>
                             <span class="text-xs font-mono text-cream/50">2025</span>
                         </div>
-                        <h3 class="font-serif text-xl font-bold mb-3 leading-snug">Comparing fondaparinux and low molecular weight heparin for thromboprophylaxis after hip and knee arthroplasty</h3>
-                        <p class="text-xs text-cream/70 mb-4 font-light">A systematic review and meta-analysis evaluating efficacy and safety profiles.</p>
+                        <h3 class="font-serif text-2xl sm:text-3xl font-bold mb-4 leading-snug">Comparing fondaparinux and low molecular weight heparin for thromboprophylaxis after hip and knee arthroplasty</h3>
+                        <p class="text-sm text-cream/70 mb-6 font-light leading-relaxed">A systematic review and meta-analysis evaluating comparative clinical efficacy and safety profiles.</p>
                     </div>
-                    <a href="https://www.ovid.com/jnls/bloodcoagulation/abstract/10.1097/mbc.0000000000001352~comparing-fondaparinux-and-low-molecular-weight-heparin-for" target="_blank" class="inline-flex items-center gap-2 text-xs font-semibold text-terracotta hover:underline mt-2">
+                    <a href="https://www.ovid.com/jnls/bloodcoagulation/abstract/10.1097/mbc.0000000000001352~comparing-fondaparinux-and-low-molecular-weight-heparin-for" target="_blank" class="inline-flex items-center gap-2 text-sm font-semibold text-terracotta hover:underline mt-4">
                         View Publication →
                     </a>
                 </div>
 
                 <!-- Paper 2 -->
-                <div class="w-[380px] sm:w-[420px] bg-terracotta text-cream p-8 rounded-3xl shadow-xl flex flex-col justify-between shrink-0">
+                <div class="scroll-snap-item w-[450px] sm:w-[540px] bg-terracotta text-cream p-10 sm:p-12 rounded-[2.5rem] shadow-2xl flex flex-col justify-between shrink-0">
                     <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full text-xs font-mono bg-charcoal/20 text-cream font-semibold">Meta-Analysis</span>
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="px-3.5 py-1.5 rounded-full text-xs font-mono bg-charcoal/20 text-cream font-semibold tracking-wide">Meta-Analysis</span>
                             <span class="text-xs font-mono text-cream/80">2025</span>
                         </div>
-                        <h3 class="font-serif text-xl font-bold mb-3 leading-snug">Evaluating the risks and benefits of continuing versus withholding renin–angiotensin system inhibitors</h3>
-                        <p class="text-xs text-cream/90 mb-4 font-light">A systematic review and meta-analysis with trial sequential analysis.</p>
+                        <h3 class="font-serif text-2xl sm:text-3xl font-bold mb-4 leading-snug">Evaluating the risks and benefits of continuing versus withholding renin–angiotensin system inhibitors</h3>
+                        <p class="text-sm text-cream/90 mb-6 font-light leading-relaxed">A systematic review and meta-analysis with trial sequential analysis on clinical outcomes.</p>
                     </div>
-                    <a href="https://link.springer.com/article/10.1007/s00210-025-04388-1" target="_blank" class="inline-flex items-center gap-2 text-xs font-semibold text-charcoal hover:underline mt-2">
+                    <a href="https://link.springer.com/article/10.1007/s00210-025-04388-1" target="_blank" class="inline-flex items-center gap-2 text-sm font-semibold text-charcoal hover:underline mt-4">
                         View Publication →
                     </a>
                 </div>
 
                 <!-- Paper 3 -->
-                <div class="w-[380px] sm:w-[420px] bg-emerald text-cream p-8 rounded-3xl shadow-xl flex flex-col justify-between shrink-0">
+                <div class="scroll-snap-item w-[450px] sm:w-[540px] bg-emerald text-cream p-10 sm:p-12 rounded-[2.5rem] shadow-2xl flex flex-col justify-between shrink-0">
                     <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full text-xs font-mono bg-charcoal/20 text-cream font-semibold">Systematic Review</span>
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="px-3.5 py-1.5 rounded-full text-xs font-mono bg-charcoal/20 text-cream font-semibold tracking-wide">Systematic Review</span>
                             <span class="text-xs font-mono text-cream/80">2025</span>
                         </div>
-                        <h3 class="font-serif text-xl font-bold mb-3 leading-snug">The impact of intraosseous vs intravenous vascular access during resuscitation in out-of-hospital cardiac arrest</h3>
-                        <p class="text-xs text-cream/90 mb-4 font-light">A comprehensive systematic review and meta-analysis of clinical outcomes.</p>
+                        <h3 class="font-serif text-2xl sm:text-3xl font-bold mb-4 leading-snug">The impact of intraosseous vs intravenous vascular access during resuscitation in out-of-hospital cardiac arrest</h3>
+                        <p class="text-sm text-cream/90 mb-6 font-light leading-relaxed">A comprehensive systematic review and meta-analysis of clinical resuscitation outcomes.</p>
                     </div>
-                    <a href="https://www.sciencedirect.com/science/article/abs/pii/S104084282500335X" target="_blank" class="inline-flex items-center gap-2 text-xs font-semibold text-charcoal hover:underline mt-2">
+                    <a href="https://www.sciencedirect.com/science/article/abs/pii/S104084282500335X" target="_blank" class="inline-flex items-center gap-2 text-sm font-semibold text-charcoal hover:underline mt-4">
                         View Publication →
                     </a>
                 </div>
 
                 <!-- Paper 4 -->
-                <div class="w-[380px] sm:w-[420px] bg-bluecard text-cream p-8 rounded-3xl shadow-xl flex flex-col justify-between shrink-0">
+                <div class="scroll-snap-item w-[450px] sm:w-[540px] bg-bluecard text-cream p-10 sm:p-12 rounded-[2.5rem] shadow-2xl flex flex-col justify-between shrink-0">
                     <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full text-xs font-mono bg-charcoal/20 text-cream font-semibold">Oncology Research</span>
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="px-3.5 py-1.5 rounded-full text-xs font-mono bg-charcoal/20 text-cream font-semibold tracking-wide">Oncology Research</span>
                             <span class="text-xs font-mono text-cream/80">2026</span>
                         </div>
-                        <h3 class="font-serif text-xl font-bold mb-3 leading-snug">Targeted doublet therapy with encorafenib and cetuximab for BRAF V600E-mutant metastatic colorectal cancer</h3>
-                        <p class="text-xs text-cream/90 mb-4 font-light">A systematic review and meta-analysis on survival benefits and safety.</p>
+                        <h3 class="font-serif text-2xl sm:text-3xl font-bold mb-4 leading-snug">Targeted doublet therapy with encorafenib and cetuximab for BRAF V600E-mutant metastatic colorectal cancer</h3>
+                        <p class="text-sm text-cream/90 mb-6 font-light leading-relaxed">A systematic review and meta-analysis on survival benefits and targeted safety.</p>
                     </div>
-                    <a href="https://www.sciencedirect.com/science/article/abs/pii/S1040842825003336" target="_blank" class="inline-flex items-center gap-2 text-xs font-semibold text-cream hover:underline mt-2">
+                    <a href="https://www.sciencedirect.com/science/article/abs/pii/S1040842825003336" target="_blank" class="inline-flex items-center gap-2 text-sm font-semibold text-cream hover:underline mt-4">
                         View Publication →
                     </a>
                 </div>
 
                 <!-- Paper 5 -->
-                <div class="w-[380px] sm:w-[420px] bg-charcoal text-cream p-8 rounded-3xl shadow-xl flex flex-col justify-between border border-charcoal/20 shrink-0">
+                <div class="scroll-snap-item w-[450px] sm:w-[540px] bg-charcoal text-cream p-10 sm:p-12 rounded-[2.5rem] shadow-2xl flex flex-col justify-between border border-charcoal/20 shrink-0">
                     <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full text-xs font-mono bg-emerald/20 text-emerald font-semibold">Retrospective Study</span>
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="px-3.5 py-1.5 rounded-full text-xs font-mono bg-emerald/20 text-emerald font-semibold tracking-wide">Retrospective Study</span>
                             <span class="text-xs font-mono text-cream/50">2025</span>
                         </div>
-                        <h3 class="font-serif text-xl font-bold mb-3 leading-snug">Trends and Disparities in Heart Failure Mortality Among Hypertensive Older Adults in the United States</h3>
-                        <p class="text-xs text-cream/70 mb-4 font-light">A 22-year retrospective population-based study.</p>
+                        <h3 class="font-serif text-2xl sm:text-3xl font-bold mb-4 leading-snug">Trends and Disparities in Heart Failure Mortality Among Hypertensive Older Adults in the United States</h3>
+                        <p class="text-sm text-cream/70 mb-6 font-light leading-relaxed">A 22-year retrospective population-based analysis of cardiovascular mortality trends.</p>
                     </div>
-                    <a href="https://link.springer.com/article/10.1007/s00210-025-04482-4" target="_blank" class="inline-flex items-center gap-2 text-xs font-semibold text-emerald hover:underline mt-2">
-                        View Publication →
-                    </a>
-                </div>
-
-                <!-- Paper 6 -->
-                <div class="w-[380px] sm:w-[420px] bg-terracotta text-cream p-8 rounded-3xl shadow-xl flex flex-col justify-between shrink-0">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full text-xs font-mono bg-charcoal/20 text-cream font-semibold">Systematic Review</span>
-                            <span class="text-xs font-mono text-cream/80">2025</span>
-                        </div>
-                        <h3 class="font-serif text-xl font-bold mb-3 leading-snug">Thermal ablation versus surgical resection for colorectal liver metastases</h3>
-                        <p class="text-xs text-cream/90 mb-4 font-light">A GRADE-assessed systematic review and meta-analysis.</p>
-                    </div>
-                    <a href="https://link.springer.com/article/10.1007/s00234-025-03688-w" target="_blank" class="inline-flex items-center gap-2 text-xs font-semibold text-charcoal hover:underline mt-2">
-                        View Publication →
-                    </a>
-                </div>
-
-                <!-- Paper 7 -->
-                <div class="w-[380px] sm:w-[420px] bg-emerald text-cream p-8 rounded-3xl shadow-xl flex flex-col justify-between shrink-0">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full text-xs font-mono bg-charcoal/20 text-cream font-semibold">Meta-Analysis</span>
-                            <span class="text-xs font-mono text-cream/80">2025</span>
-                        </div>
-                        <h3 class="font-serif text-xl font-bold mb-3 leading-snug">Direct oral anticoagulant dose vs dual antiplatelet therapy after left atrial appendage closure</h3>
-                        <p class="text-xs text-cream/90 mb-4 font-light">Comparative systematic review and pooled analysis.</p>
-                    </div>
-                    <a href="https://link.springer.com/article/10.1186/s12885-025-14482-5" target="_blank" class="inline-flex items-center gap-2 text-xs font-semibold text-charcoal hover:underline mt-2">
-                        View Publication →
-                    </a>
-                </div>
-
-                <!-- Paper 8 -->
-                <div class="w-[380px] sm:w-[420px] bg-bluecard text-cream p-8 rounded-3xl shadow-xl flex flex-col justify-between shrink-0">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full text-xs font-mono bg-charcoal/20 text-cream font-semibold">Clinical Trial Review</span>
-                            <span class="text-xs font-mono text-cream/80">2025</span>
-                        </div>
-                        <h3 class="font-serif text-xl font-bold mb-3 leading-snug">Clinical impact of high-dose esomeprazole-amoxicillin dual therapy as rescue treatment for H. pylori</h3>
-                        <p class="text-xs text-cream/90 mb-4 font-light">Evaluating eradication efficacy in refractory infections.</p>
-                    </div>
-                    <a href="https://onlinelibrary.wiley.com/doi/10.1111/jch.70064" target="_blank" class="inline-flex items-center gap-2 text-xs font-semibold text-cream hover:underline mt-2">
-                        View Publication →
-                    </a>
-                </div>
-
-                <!-- Paper 9 -->
-                <div class="w-[380px] sm:w-[420px] bg-charcoal text-cream p-8 rounded-3xl shadow-xl flex flex-col justify-between shrink-0">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full text-xs font-mono bg-terracotta/20 text-terracotta font-semibold">Oncology</span>
-                            <span class="text-xs font-mono text-cream/50">2025</span>
-                        </div>
-                        <h3 class="font-serif text-xl font-bold mb-3 leading-snug">TROP-2–Directed Antibody–Drug Conjugates in Advanced NSCLC</h3>
-                        <p class="text-xs text-cream/70 mb-4 font-light">Meta-analysis of efficacy, safety, and reconstructed survival outcomes.</p>
-                    </div>
-                    <a href="https://www.sciencedirect.com/science/article/pii/S2772609625000292" target="_blank" class="inline-flex items-center gap-2 text-xs font-semibold text-terracotta hover:underline mt-2">
-                        View Publication →
-                    </a>
-                </div>
-
-                <!-- Paper 10 -->
-                <div class="w-[380px] sm:w-[420px] bg-terracotta text-cream p-8 rounded-3xl shadow-xl flex flex-col justify-between shrink-0">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full text-xs font-mono bg-charcoal/20 text-cream font-semibold">Cardiology</span>
-                            <span class="text-xs font-mono text-cream/80">2025</span>
-                        </div>
-                        <h3 class="font-serif text-xl font-bold mb-3 leading-snug">Intravenous thrombolysis as an adjunct to endovascular thrombectomy in acute basilar artery occlusion</h3>
-                        <p class="text-xs text-cream/90 mb-4 font-light">GRADE-assessed systematic review and meta-analysis.</p>
-                    </div>
-                    <a href="https://www.sciencedirect.com/science/article/abs/pii/S0147956325000457" target="_blank" class="inline-flex items-center gap-2 text-xs font-semibold text-charcoal hover:underline mt-2">
-                        View Publication →
-                    </a>
-                </div>
-
-                <!-- Paper 11 -->
-                <div class="w-[380px] sm:w-[420px] bg-emerald text-cream p-8 rounded-3xl shadow-xl flex flex-col justify-between shrink-0">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full text-xs font-mono bg-charcoal/20 text-cream font-semibold">Oncology</span>
-                            <span class="text-xs font-mono text-cream/80">2024</span>
-                        </div>
-                        <h3 class="font-serif text-xl font-bold mb-3 leading-snug">Neoadjuvant combination versus single-agent immune checkpoint inhibition in MSI-H/dMMR colorectal cancer</h3>
-                        <p class="text-xs text-cream/90 mb-4 font-light">Systematic review and meta-analysis.</p>
-                    </div>
-                    <a href="https://www.clinical-genitourinary-cancer.com/article/S1558-7673(24)00268-4/abstract" target="_blank" class="inline-flex items-center gap-2 text-xs font-semibold text-charcoal hover:underline mt-2">
-                        View Publication →
-                    </a>
-                </div>
-
-                <!-- Paper 12 -->
-                <div class="w-[380px] sm:w-[420px] bg-bluecard text-cream p-8 rounded-3xl shadow-xl flex flex-col justify-between shrink-0">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full text-xs font-mono bg-charcoal/20 text-cream font-semibold">Hypertension</span>
-                            <span class="text-xs font-mono text-cream/80">2025</span>
-                        </div>
-                        <h3 class="font-serif text-xl font-bold mb-3 leading-snug">Efficacy of Aldosterone Synthase Inhibitors in Uncontrolled and Resistant Hypertension</h3>
-                        <p class="text-xs text-cream/90 mb-4 font-light">Updated systematic review and meta-analysis.</p>
-                    </div>
-                    <a href="https://link.springer.com/article/10.1007/s00210-025-04388-1" target="_blank" class="inline-flex items-center gap-2 text-xs font-semibold text-cream hover:underline mt-2">
-                        View Publication →
-                    </a>
-                </div>
-
-                <!-- Paper 13 -->
-                <div class="w-[380px] sm:w-[420px] bg-charcoal text-cream p-8 rounded-3xl shadow-xl flex flex-col justify-between shrink-0">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full text-xs font-mono bg-terracotta/20 text-terracotta font-semibold">Neurology</span>
-                            <span class="text-xs font-mono text-cream/50">2025</span>
-                        </div>
-                        <h3 class="font-serif text-xl font-bold mb-3 leading-snug">Intravenous Thrombolysis Outcomes in Basilar Artery Occlusion</h3>
-                        <p class="text-xs text-cream/70 mb-4 font-light">Comprehensive analysis of mechanical thrombectomy adjuncts.</p>
-                    </div>
-                    <a href="https://www.sciencedirect.com/science/article/abs/pii/S104084282500335X" target="_blank" class="inline-flex items-center gap-2 text-xs font-semibold text-terracotta hover:underline mt-2">
+                    <a href="https://link.springer.com/article/10.1007/s00210-025-04482-4" target="_blank" class="inline-flex items-center gap-2 text-sm font-semibold text-emerald hover:underline mt-4">
                         View Publication →
                     </a>
                 </div>
@@ -549,7 +437,7 @@
                     <span>Email</span>
                 </a>
 
-                <!-- Updated Sleek Contact / Phone Button -->
+                <!-- Phone / Contact Button -->
                 <a href="tel:+923246427446" class="inline-flex items-center gap-3 px-6 py-3.5 rounded-full bg-cream text-charcoal font-semibold text-sm hover:bg-terracotta hover:text-cream transition-all shadow-md">
                     <svg class="w-5 h-5 text-emerald fill-current" viewBox="0 0 24 24"><path d="M20 22.621l-3.521-6.795c-.275-.531-.926-.745-1.455-.472l-2.039 1.055c-1.637-.775-3.08-2.218-3.855-3.855l1.055-2.039c.273-.529.059-1.18-.472-1.455l-6.795-3.521c-.542-.281-1.205-.094-1.528.434l-2 3.333c-1.378 2.296-.289 5.342 2.378 6.577 3.513 1.624 6.84 4.951 8.464 8.464 1.235 2.667 4.281 3.756 6.577 2.378l3.333-2.001c.528-.323.715-.986.434-1.528z"/></svg>
                     <span>Direct Call (+92 324 6427446)</span>
@@ -579,13 +467,46 @@
             });
         });
 
-        // Smooth Mouse Wheel / Cursor Scrolling for Publications Track
+        // Smooth Slow Wheel / Cursor Scrolling for Publications Track
         const pubContainer = document.getElementById('pub-scroll-container');
         pubContainer.addEventListener('wheel', (evt) => {
             if (evt.deltaY !== 0) {
                 evt.preventDefault();
-                pubContainer.scrollLeft += evt.deltaY * 1.5;
+                pubContainer.scrollBy({
+                    left: evt.deltaY * 0.8,
+                    behavior: 'smooth'
+                });
             }
+        });
+
+        // Drag to scroll functionality for mouse users
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        pubContainer.addEventListener('mousedown', (e) => {
+            isDown = true;
+            pubContainer.classList.add('cursor-grabbing');
+            startX = e.pageX - pubContainer.offsetLeft;
+            scrollLeft = pubContainer.scrollLeft;
+        });
+
+        pubContainer.addEventListener('mouseleave', () => {
+            isDown = false;
+            pubContainer.classList.remove('cursor-grabbing');
+        });
+
+        pubContainer.addEventListener('mouseup', () => {
+            isDown = false;
+            pubContainer.classList.remove('cursor-grabbing');
+        });
+
+        pubContainer.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - pubContainer.offsetLeft;
+            const walk = (x - startX) * 1.5;
+            pubContainer.scrollLeft = scrollLeft - walk;
         });
     </script>
 
