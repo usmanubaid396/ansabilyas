@@ -66,14 +66,6 @@
             z-index: 50;
             box-shadow: 0 30px 60px -15px rgba(24, 24, 24, 0.25);
         }
-        /* 3D Tilt Wrapper styling */
-        .tilt-container {
-            perspective: 1000px;
-        }
-        .tilt-card {
-            transition: transform 0.1s ease-out;
-            transform-style: preserve-3d;
-        }
     </style>
 </head>
 <body class="bg-cream text-charcoal selection:bg-terracotta selection:text-cream">
@@ -91,25 +83,26 @@
                 <a href="#publications" class="hover:text-terracotta transition-colors">Publications (13)</a>
                 <a href="#journey" class="hover:text-terracotta transition-colors">Journey</a>
                 <a href="#skills" class="hover:text-terracotta transition-colors">Skills & Expertise</a>
+                <a href="Muhammad_Ansab_CV.pdf" target="_blank" class="hover:text-terracotta transition-colors font-semibold text-terracotta">View CV</a>
                 <a href="#contact" class="hover:text-terracotta transition-colors">Contact</a>
             </nav>
 
-            <a href="#contact" class="px-5 py-2.5 rounded-full text-xs font-semibold bg-charcoal text-cream hover:bg-terracotta transition-all shadow-sm">
-                Let's Talk
+            <a href="Muhammad_Ansab_CV.pdf" download class="px-5 py-2.5 rounded-full text-xs font-semibold bg-charcoal text-cream hover:bg-terracotta transition-all shadow-sm">
+                Download CV
             </a>
         </div>
     </header>
 
-    <!-- HERO SECTION WITH 3D INTERACTIVE TILT -->
-    <section id="hero" class="min-h-screen flex items-center pt-32 pb-20 px-6 md:px-12 tilt-container">
-        <div id="hero-card" class="tilt-card max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-end bg-charcoal/5 border border-charcoal/15 p-8 sm:p-14 rounded-3xl shadow-xl backdrop-blur-sm relative overflow-hidden">
+    <!-- HERO SECTION -->
+    <section id="hero" class="min-h-screen flex items-center pt-32 pb-20 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-end bg-charcoal/5 border border-charcoal/15 p-8 sm:p-14 rounded-3xl shadow-xl backdrop-blur-sm relative overflow-hidden">
             
             <!-- Background Theme Accents -->
             <div class="absolute -top-24 -left-24 w-72 h-72 bg-terracotta/10 rounded-full blur-3xl pointer-events-none"></div>
             <div class="absolute -bottom-24 -right-24 w-72 h-72 bg-emerald/10 rounded-full blur-3xl pointer-events-none"></div>
 
             <!-- Left Headline & Bio -->
-            <div class="lg:col-span-8" style="transform: translateZ(40px);">
+            <div class="lg:col-span-8">
                 <div class="inline-block px-4 py-1.5 rounded-full text-xs font-mono bg-terracotta/15 text-terracotta font-semibold mb-6">
                     USMLE Step 1 Cleared • SIMS Clinician-Researcher
                 </div>
@@ -127,12 +120,12 @@
             </div>
 
             <!-- Right Action Buttons -->
-            <div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-4 justify-start lg:justify-end" style="transform: translateZ(30px);">
+            <div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-4 justify-start lg:justify-end">
                 <a href="#publications" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-sm bg-charcoal text-cream hover:bg-terracotta transition-all shadow-lg shadow-charcoal/10">
                     Explore Publications →
                 </a>
-                <a href="#contact" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-sm bg-cream text-charcoal border-2 border-charcoal/20 hover:border-charcoal transition-all">
-                    Get in Touch
+                <a href="Muhammad_Ansab_CV.pdf" target="_blank" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-sm bg-cream text-charcoal border-2 border-charcoal/20 hover:border-charcoal transition-all">
+                    View & Download CV
                 </a>
             </div>
 
@@ -560,6 +553,12 @@
                     <svg class="w-5 h-5 text-emerald fill-current" viewBox="0 0 24 24"><path d="M20 22.621l-3.521-6.795c-.275-.531-.926-.745-1.455-.472l-2.039 1.055c-1.637-.775-3.08-2.218-3.855-3.855l1.055-2.039c.273-.529.059-1.18-.472-1.455l-6.795-3.521c-.542-.281-1.205-.094-1.528.434l-2 3.333c-1.378 2.296-.289 5.342 2.378 6.577 3.513 1.624 6.84 4.951 8.464 8.464 1.235 2.667 4.281 3.756 6.577 2.378l3.333-2.001c.528-.323.715-.986.434-1.528z"/></svg>
                     <span>Contact (+92 324 6427446)</span>
                 </a>
+
+                <!-- Download CV Button -->
+                <a href="Muhammad_Ansab_CV.pdf" download class="inline-flex items-center gap-3 px-6 py-3.5 rounded-full bg-terracotta text-cream font-semibold text-sm hover:bg-cream hover:text-charcoal transition-all shadow-md">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 9h-4v-6h-6v6h-4l7 7 7-7zm-11 11v2h8v-2h-8z"/></svg>
+                    <span>Download CV (PDF)</span>
+                </a>
             </div>
         </div>
     </section>
@@ -571,32 +570,6 @@
             <a href="#hero" class="hover:text-terracotta transition-colors">Back to Top ↑</a>
         </div>
     </footer>
-
-    <!-- 3D TILT INTERACTION SCRIPT -->
-    <script>
-        const heroSection = document.getElementById('hero');
-        const heroCard = document.getElementById('hero-card');
-
-        heroSection.addEventListener('mousemove', (e) => {
-            const rect = heroSection.getBoundingClientRect();
-            const x = e.clientX - rect.left - rect.width / 2;
-            const y = e.clientY - rect.top - rect.height / 2;
-            
-            const rotateX = (-y / (rect.height / 2)) * 6;
-            const rotateY = (x / (rect.width / 2)) * 6;
-
-            heroCard.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-        });
-
-        heroSection.addEventListener('mouseleave', () => {
-            heroCard.style.transform = 'rotateX(0deg) rotateY(0deg)';
-            heroCard.style.transition = 'transform 0.5s ease-out';
-        });
-
-        heroSection.addEventListener('mouseenter', () => {
-            heroCard.style.transition = 'none';
-        });
-    </script>
 
 </body>
 </html>
