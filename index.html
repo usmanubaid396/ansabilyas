@@ -49,9 +49,9 @@
             transform-origin: bottom center;
         }
         .fanned-card:hover {
-            transform: translateY(-24px) scale(1.05) rotate(0deg) !important;
+            transform: translateY(-16px) scale(1.03) rotate(0deg) !important;
             z-index: 50;
-            box-shadow: 0 30px 60px -15px rgba(24, 24, 24, 0.25);
+            box-shadow: 0 20px 40px -10px rgba(24, 24, 24, 0.2);
         }
         /* Minimalist List Item Hover Effect */
         .pub-row {
@@ -77,13 +77,14 @@
 <body class="bg-cream text-charcoal selection:bg-terracotta selection:text-cream">
 
     <!-- STICKY NAVBAR -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-cream/90 backdrop-blur-md border-b border-charcoal/10 py-4 px-6 md:px-12">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-cream/90 backdrop-blur-md border-b border-charcoal/10 py-4 px-4 sm:px-6 md:px-12">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <a href="#hero" class="font-serif text-xl font-bold tracking-tight text-charcoal flex items-center gap-2.5">
+            <a href="#hero" class="font-serif text-lg sm:text-xl font-bold tracking-tight text-charcoal flex items-center gap-2.5">
                 <span class="w-3 h-3 rounded-full bg-terracotta"></span>
                 Muhammad Ansab
             </a>
             
+            <!-- Desktop Navigation Links -->
             <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-charcoal/80">
                 <a href="#about" class="hover:text-terracotta transition-colors">About</a>
                 <a href="#publications" class="hover:text-terracotta transition-colors">Publications (13)</a>
@@ -92,47 +93,63 @@
                 <a href="#contact" class="hover:text-terracotta transition-colors">Contact</a>
             </nav>
 
-            <a href="#contact" class="px-5 py-2.5 rounded-full text-xs font-semibold bg-charcoal text-cream hover:bg-terracotta transition-all shadow-sm">
-                Let's Talk
-            </a>
+            <div class="flex items-center gap-3">
+                <a href="#contact" class="hidden sm:inline-block px-5 py-2.5 rounded-full text-xs font-semibold bg-charcoal text-cream hover:bg-terracotta transition-all shadow-sm">
+                    Let's Talk
+                </a>
+                <!-- Mobile Menu Button (Hamburger) -->
+                <button onclick="toggleMobileMenu()" aria-label="Toggle Menu" class="md:hidden p-2 rounded-xl bg-charcoal/5 text-charcoal focus:outline-none">
+                    <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-cream border-b border-charcoal/10 shadow-xl py-6 px-6 flex flex-col gap-4 text-base font-medium">
+            <a href="#about" onclick="toggleMobileMenu()" class="hover:text-terracotta transition-colors py-1">About</a>
+            <a href="#publications" onclick="toggleMobileMenu()" class="hover:text-terracotta transition-colors py-1">Publications (13)</a>
+            <a href="#journey" onclick="toggleMobileMenu()" class="hover:text-terracotta transition-colors py-1">Journey</a>
+            <a href="#skills" onclick="toggleMobileMenu()" class="hover:text-terracotta transition-colors py-1">Skills & Expertise</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="hover:text-terracotta transition-colors py-1">Contact</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="mt-2 text-center py-3 rounded-full text-xs font-semibold bg-charcoal text-cream">Let's Talk</a>
         </div>
     </header>
 
     <!-- HERO SECTION -->
-    <section id="hero" class="relative min-h-screen flex items-center pt-32 pb-20 px-6 md:px-12 overflow-hidden">
+    <section id="hero" class="relative min-h-[90vh] sm:min-h-screen flex items-center pt-28 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6 md:px-12 overflow-hidden">
         
         <!-- Minimalist 3D Interactive Floating Shapes Beneath Layer -->
         <div id="layer-3d-bg" class="absolute inset-0 pointer-events-none z-0">
-            <div class="bg-3d-layer absolute top-1/4 left-1/12 w-72 h-72 bg-terracotta/10 rounded-full blur-3xl" data-speed="25"></div>
-            <div class="bg-3d-layer absolute bottom-1/4 right-1/12 w-96 h-96 bg-emerald/10 rounded-full blur-3xl" data-speed="-20"></div>
-            <div class="bg-3d-layer absolute top-1/2 right-1/4 w-48 h-48 bg-bluecard/10 rounded-full blur-2xl" data-speed="15"></div>
+            <div class="bg-3d-layer absolute top-1/4 left-1/12 w-56 sm:w-72 h-56 sm:h-72 bg-terracotta/10 rounded-full blur-3xl" data-speed="25"></div>
+            <div class="bg-3d-layer absolute bottom-1/4 right-1/12 w-72 sm:w-96 h-72 sm:h-96 bg-emerald/10 rounded-full blur-3xl" data-speed="-20"></div>
+            <div class="bg-3d-layer absolute top-1/2 right-1/4 w-36 sm:w-48 h-36 sm:h-48 bg-bluecard/10 rounded-full blur-2xl" data-speed="15"></div>
         </div>
 
-        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-end relative z-10">
+        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end relative z-10">
             
             <!-- Left Headline & Bio -->
             <div class="lg:col-span-8">
-                <div class="inline-block px-4 py-1.5 rounded-full text-xs font-mono bg-terracotta/15 text-terracotta font-semibold mb-6">
+                <div class="inline-block px-4 py-1.5 rounded-full text-xs font-mono bg-terracotta/15 text-terracotta font-semibold mb-4 sm:mb-6">
                     USMLE Step 1 Cleared • SIMS Clinician-Researcher
                 </div>
                 
-                <h1 class="font-sans text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-charcoal mb-8 leading-[1.05]">
+                <h1 class="font-sans text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-charcoal mb-6 sm:mb-8 leading-[1.05]">
                     I will help you publish<br>
                     <span class="font-serif italic text-terracotta font-normal">high-impact</span><br>
                     research.
                 </h1>
                 
-                <p class="font-sans text-charcoal/70 text-lg sm:text-xl max-w-2xl leading-relaxed font-light">
+                <p class="font-sans text-charcoal/75 text-base sm:text-lg lg:text-xl max-w-2xl leading-relaxed font-light">
                     I'm Muhammad Ansab — a final-year medical student at SIMS and peer reviewer turning clinical data into peer-reviewed oncology publications and systematic reviews.
                 </p>
             </div>
 
             <!-- Right Action Buttons -->
-            <div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-4 justify-start lg:justify-end">
-                <a href="#publications" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-sm bg-charcoal text-cream hover:bg-terracotta transition-all shadow-lg shadow-charcoal/10">
+            <div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3 sm:gap-4 justify-start lg:justify-end w-full sm:w-auto">
+                <a href="#publications" class="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-semibold text-sm bg-charcoal text-cream hover:bg-terracotta transition-all shadow-lg shadow-charcoal/10">
                     Explore Publications →
                 </a>
-                <a href="#contact" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-sm bg-cream text-charcoal border-2 border-charcoal/20 hover:border-charcoal transition-all">
+                <a href="#contact" class="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-semibold text-sm bg-cream text-charcoal border-2 border-charcoal/20 hover:border-charcoal transition-all">
                     Get in Touch
                 </a>
             </div>
@@ -141,34 +158,34 @@
     </section>
 
     <!-- ABOUT SECTION -->
-    <section id="about" class="py-24 px-6 md:px-12 max-w-6xl mx-auto">
-        <div class="bg-charcoal text-cream p-8 sm:p-14 rounded-3xl shadow-2xl relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-96 h-96 bg-terracotta/10 rounded-full blur-3xl pointer-events-none"></div>
+    <section id="about" class="py-20 sm:py-24 px-4 sm:px-6 md:px-12 max-w-6xl mx-auto">
+        <div class="bg-charcoal text-cream p-6 sm:p-10 md:p-14 rounded-3xl shadow-2xl relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-72 sm:w-96 h-72 sm:h-96 bg-terracotta/10 rounded-full blur-3xl pointer-events-none"></div>
             
             <div class="max-w-3xl relative z-10">
                 <span class="text-emerald font-mono text-xs uppercase tracking-widest block mb-3">About Me</span>
-                <h2 class="font-serif text-3xl sm:text-5xl font-bold mb-6 leading-tight">
+                <h2 class="font-serif text-2.5xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight">
                     Translational Oncology & Evidence-Based Innovation
                 </h2>
-                <p class="text-cream/80 text-base sm:text-lg leading-relaxed mb-6 font-light">
+                <p class="text-cream/80 text-sm sm:text-base md:text-lg leading-relaxed mb-6 font-light">
                     I am a final-year medical student at the <strong class="text-white font-medium">Services Institute of Medical Sciences (SIMS)</strong>, Lahore, Pakistan, with a strong academic foundation (USMLE Step 1 Cleared) and a dedicated interest in oncology, particularly in the development and clinical application of targeted cancer therapies.
                 </p>
-                <p class="text-cream/70 text-sm sm:text-base leading-relaxed mb-8 font-light">
+                <p class="text-cream/70 text-xs sm:text-sm md:text-base leading-relaxed mb-8 font-light">
                     My research experience spans systematic reviews, meta-analyses, and real-world data studies related to internal medicine and targeted oncology. Beyond research, I am actively engaged in medical leadership and humanitarian initiatives through societies like IFMSA Pakistan and VFAHT Pakistan.
                 </p>
                 
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-6 border-t border-cream/10">
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6 pt-6 border-t border-cream/10">
                     <div>
-                        <div class="font-serif text-3xl font-bold text-emerald">13</div>
-                        <div class="text-xs font-mono text-cream/60 uppercase mt-1">Publications</div>
+                        <div class="font-serif text-2xl sm:text-3xl font-bold text-emerald">13</div>
+                        <div class="text-[11px] sm:text-xs font-mono text-cream/60 uppercase mt-1">Publications</div>
                     </div>
                     <div>
-                        <div class="font-serif text-3xl font-bold text-terracotta">USMLE</div>
-                        <div class="text-xs font-mono text-cream/60 uppercase mt-1">Step 1 Cleared</div>
+                        <div class="font-serif text-2xl sm:text-3xl font-bold text-terracotta">USMLE</div>
+                        <div class="text-[11px] sm:text-xs font-mono text-cream/60 uppercase mt-1">Step 1 Cleared</div>
                     </div>
                     <div>
-                        <div class="font-serif text-3xl font-bold text-bluecard">5+ Journals</div>
-                        <div class="text-xs font-mono text-cream/60 uppercase mt-1">Active Peer Reviewer</div>
+                        <div class="font-serif text-2xl sm:text-3xl font-bold text-bluecard">5+ Journals</div>
+                        <div class="text-[11px] sm:text-xs font-mono text-cream/60 uppercase mt-1">Active Peer Reviewer</div>
                     </div>
                 </div>
             </div>
@@ -176,13 +193,13 @@
     </section>
 
     <!-- PUBLICATIONS SECTION: ULTRA-MINIMALIST INDEX LIST WITH VIEW ALL TOGGLE -->
-    <section id="publications" class="py-24 px-6 md:px-12 max-w-7xl mx-auto">
-        <div class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-charcoal/15 pb-8">
+    <section id="publications" class="py-20 sm:py-24 px-4 sm:px-6 md:px-12 max-w-7xl mx-auto">
+        <div class="mb-10 sm:mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-charcoal/15 pb-6 sm:pb-8">
             <div>
                 <span class="text-terracotta font-mono text-xs uppercase tracking-widest block mb-2">Peer-Reviewed Scholarship</span>
-                <h2 class="font-serif text-4xl sm:text-6xl font-bold text-charcoal">Featured Publications (13)</h2>
+                <h2 class="font-serif text-3.5xl sm:text-5xl md:text-6xl font-bold text-charcoal">Featured Publications (13)</h2>
             </div>
-            <p class="text-charcoal/60 text-sm max-w-sm font-light">
+            <p class="text-charcoal/60 text-xs sm:text-sm max-w-sm font-light">
                 A chronological index of peer-reviewed research papers and meta-analyses.
             </p>
         </div>
@@ -191,69 +208,69 @@
         <div class="divide-y divide-charcoal/15 border-t border-charcoal/15">
             
             <!-- Paper 1 -->
-            <a href="https://www.ovid.com/jnls/bloodcoagulation/abstract/10.1097/mbc.0000000000001352~comparing-fondaparinux-and-low-molecular-weight-heparin-for" target="_blank" class="pub-row py-8 px-4 flex flex-col md:flex-row md:items-center justify-between gap-6 group">
-                <div class="flex items-start md:items-center gap-8 md:gap-16">
-                    <span class="font-mono text-sm text-charcoal/40 font-medium">01</span>
+            <a href="https://www.ovid.com/jnls/bloodcoagulation/abstract/10.1097/mbc.0000000000001352~comparing-fondaparinux-and-low-molecular-weight-heparin-for" target="_blank" class="pub-row py-6 sm:py-8 px-2 sm:px-4 flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-6 group">
+                <div class="flex items-start md:items-center gap-4 sm:gap-8 md:gap-16">
+                    <span class="font-mono text-xs sm:text-sm text-charcoal/40 font-medium">01</span>
                     <div>
-                        <h3 class="font-serif text-xl sm:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1.5">Comparing fondaparinux and low molecular weight heparin for thromboprophylaxis after hip and knee arthroplasty</h3>
+                        <h3 class="font-serif text-lg sm:text-xl md:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1">Comparing fondaparinux and low molecular weight heparin for thromboprophylaxis after hip and knee arthroplasty</h3>
                         <p class="text-xs sm:text-sm text-charcoal/60 font-light">A systematic review and meta-analysis evaluating comparative clinical efficacy and safety profiles.</p>
                     </div>
                 </div>
-                <div class="flex items-center justify-between md:justify-end gap-6 shrink-0">
-                    <span class="text-xs font-mono text-terracotta font-semibold uppercase tracking-wider">Meta-Analysis • 2025</span>
-                    <div class="arrow-icon w-10 h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                <div class="flex items-center justify-between md:justify-end gap-4 sm:gap-6 shrink-0 mt-2 md:mt-0">
+                    <span class="text-[11px] sm:text-xs font-mono text-terracotta font-semibold uppercase tracking-wider">Meta-Analysis • 2025</span>
+                    <div class="arrow-icon w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
+                        <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
                     </div>
                 </div>
             </a>
 
             <!-- Paper 2 -->
-            <a href="https://link.springer.com/article/10.1007/s00210-025-04388-1" target="_blank" class="pub-row py-8 px-4 flex flex-col md:flex-row md:items-center justify-between gap-6 group">
-                <div class="flex items-start md:items-center gap-8 md:gap-16">
-                    <span class="font-mono text-sm text-charcoal/40 font-medium">02</span>
+            <a href="https://link.springer.com/article/10.1007/s00210-025-04388-1" target="_blank" class="pub-row py-6 sm:py-8 px-2 sm:px-4 flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-6 group">
+                <div class="flex items-start md:items-center gap-4 sm:gap-8 md:gap-16">
+                    <span class="font-mono text-xs sm:text-sm text-charcoal/40 font-medium">02</span>
                     <div>
-                        <h3 class="font-serif text-xl sm:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1.5">Evaluating the risks and benefits of continuing versus withholding renin–angiotensin system inhibitors</h3>
+                        <h3 class="font-serif text-lg sm:text-xl md:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1">Evaluating the risks and benefits of continuing versus withholding renin–angiotensin system inhibitors</h3>
                         <p class="text-xs sm:text-sm text-charcoal/60 font-light">A systematic review and meta-analysis with trial sequential analysis on clinical outcomes.</p>
                     </div>
                 </div>
-                <div class="flex items-center justify-between md:justify-end gap-6 shrink-0">
-                    <span class="text-xs font-mono text-terracotta font-semibold uppercase tracking-wider">Meta-Analysis • 2025</span>
-                    <div class="arrow-icon w-10 h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                <div class="flex items-center justify-between md:justify-end gap-4 sm:gap-6 shrink-0 mt-2 md:mt-0">
+                    <span class="text-[11px] sm:text-xs font-mono text-terracotta font-semibold uppercase tracking-wider">Meta-Analysis • 2025</span>
+                    <div class="arrow-icon w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
+                        <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
                     </div>
                 </div>
             </a>
 
             <!-- Paper 3 -->
-            <a href="https://www.sciencedirect.com/science/article/abs/pii/S104084282500335X" target="_blank" class="pub-row py-8 px-4 flex flex-col md:flex-row md:items-center justify-between gap-6 group">
-                <div class="flex items-start md:items-center gap-8 md:gap-16">
-                    <span class="font-mono text-sm text-charcoal/40 font-medium">03</span>
+            <a href="https://www.sciencedirect.com/science/article/abs/pii/S104084282500335X" target="_blank" class="pub-row py-6 sm:py-8 px-2 sm:px-4 flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-6 group">
+                <div class="flex items-start md:items-center gap-4 sm:gap-8 md:gap-16">
+                    <span class="font-mono text-xs sm:text-sm text-charcoal/40 font-medium">03</span>
                     <div>
-                        <h3 class="font-serif text-xl sm:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1.5">The impact of intraosseous vs intravenous vascular access during resuscitation in out-of-hospital cardiac arrest</h3>
+                        <h3 class="font-serif text-lg sm:text-xl md:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1">The impact of intraosseous vs intravenous vascular access during resuscitation in out-of-hospital cardiac arrest</h3>
                         <p class="text-xs sm:text-sm text-charcoal/60 font-light">A comprehensive systematic review and meta-analysis of clinical resuscitation outcomes.</p>
                     </div>
                 </div>
-                <div class="flex items-center justify-between md:justify-end gap-6 shrink-0">
-                    <span class="text-xs font-mono text-emerald font-semibold uppercase tracking-wider">Systematic Review • 2025</span>
-                    <div class="arrow-icon w-10 h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                <div class="flex items-center justify-between md:justify-end gap-4 sm:gap-6 shrink-0 mt-2 md:mt-0">
+                    <span class="text-[11px] sm:text-xs font-mono text-emerald font-semibold uppercase tracking-wider">Systematic Review • 2025</span>
+                    <div class="arrow-icon w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
+                        <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
                     </div>
                 </div>
             </a>
 
             <!-- Paper 4 -->
-            <a href="https://www.sciencedirect.com/science/article/abs/pii/S1040842825003336" target="_blank" class="pub-row py-8 px-4 flex flex-col md:flex-row md:items-center justify-between gap-6 group">
-                <div class="flex items-start md:items-center gap-8 md:gap-16">
-                    <span class="font-mono text-sm text-charcoal/40 font-medium">04</span>
+            <a href="https://www.sciencedirect.com/science/article/abs/pii/S1040842825003336" target="_blank" class="pub-row py-6 sm:py-8 px-2 sm:px-4 flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-6 group">
+                <div class="flex items-start md:items-center gap-4 sm:gap-8 md:gap-16">
+                    <span class="font-mono text-xs sm:text-sm text-charcoal/40 font-medium">04</span>
                     <div>
-                        <h3 class="font-serif text-xl sm:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1.5">Targeted doublet therapy with encorafenib and cetuximab for BRAF V600E-mutant metastatic colorectal cancer</h3>
+                        <h3 class="font-serif text-lg sm:text-xl md:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1">Targeted doublet therapy with encorafenib and cetuximab for BRAF V600E-mutant metastatic colorectal cancer</h3>
                         <p class="text-xs sm:text-sm text-charcoal/60 font-light">A systematic review and meta-analysis on survival benefits and targeted safety.</p>
                     </div>
                 </div>
-                <div class="flex items-center justify-between md:justify-end gap-6 shrink-0">
-                    <span class="text-xs font-mono text-bluecard font-semibold uppercase tracking-wider">Oncology Research • 2026</span>
-                    <div class="arrow-icon w-10 h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                <div class="flex items-center justify-between md:justify-end gap-4 sm:gap-6 shrink-0 mt-2 md:mt-0">
+                    <span class="text-[11px] sm:text-xs font-mono text-bluecard font-semibold uppercase tracking-wider">Oncology Research • 2026</span>
+                    <div class="arrow-icon w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
+                        <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
                     </div>
                 </div>
             </a>
@@ -262,154 +279,154 @@
             <div id="extra-pubs" class="contents hidden">
                 
                 <!-- Paper 5 -->
-                <a href="https://link.springer.com/article/10.1007/s00210-025-04482-4" target="_blank" class="pub-row py-8 px-4 flex flex-col md:flex-row md:items-center justify-between gap-6 group">
-                    <div class="flex items-start md:items-center gap-8 md:gap-16">
-                        <span class="font-mono text-sm text-charcoal/40 font-medium">05</span>
+                <a href="https://link.springer.com/article/10.1007/s00210-025-04482-4" target="_blank" class="pub-row py-6 sm:py-8 px-2 sm:px-4 flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-6 group">
+                    <div class="flex items-start md:items-center gap-4 sm:gap-8 md:gap-16">
+                        <span class="font-mono text-xs sm:text-sm text-charcoal/40 font-medium">05</span>
                         <div>
-                            <h3 class="font-serif text-xl sm:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1.5">Trends and Disparities in Heart Failure Mortality Among Hypertensive Older Adults in the United States</h3>
+                            <h3 class="font-serif text-lg sm:text-xl md:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1">Trends and Disparities in Heart Failure Mortality Among Hypertensive Older Adults in the United States</h3>
                             <p class="text-xs sm:text-sm text-charcoal/60 font-light">A 22-year retrospective population-based analysis of cardiovascular mortality trends.</p>
                         </div>
                     </div>
-                    <div class="flex items-center justify-between md:justify-end gap-6 shrink-0">
-                        <span class="text-xs font-mono text-emerald font-semibold uppercase tracking-wider">Retrospective Study • 2025</span>
-                        <div class="arrow-icon w-10 h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    <div class="flex items-center justify-between md:justify-end gap-4 sm:gap-6 shrink-0 mt-2 md:mt-0">
+                        <span class="text-[11px] sm:text-xs font-mono text-emerald font-semibold uppercase tracking-wider">Retrospective Study • 2025</span>
+                        <div class="arrow-icon w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
+                            <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
                         </div>
                     </div>
                 </a>
 
                 <!-- Paper 6 -->
-                <a href="https://link.springer.com/article/10.1007/s00234-025-03688-w" target="_blank" class="pub-row py-8 px-4 flex flex-col md:flex-row md:items-center justify-between gap-6 group">
-                    <div class="flex items-start md:items-center gap-8 md:gap-16">
-                        <span class="font-mono text-sm text-charcoal/40 font-medium">06</span>
+                <a href="https://link.springer.com/article/10.1007/s00234-025-03688-w" target="_blank" class="pub-row py-6 sm:py-8 px-2 sm:px-4 flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-6 group">
+                    <div class="flex items-start md:items-center gap-4 sm:gap-8 md:gap-16">
+                        <span class="font-mono text-xs sm:text-sm text-charcoal/40 font-medium">06</span>
                         <div>
-                            <h3 class="font-serif text-xl sm:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1.5">Thermal ablation versus surgical resection for colorectal liver metastases</h3>
+                            <h3 class="font-serif text-lg sm:text-xl md:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1">Thermal ablation versus surgical resection for colorectal liver metastases</h3>
                             <p class="text-xs sm:text-sm text-charcoal/60 font-light">A GRADE-assessed systematic review and meta-analysis of hepatic resection outcomes.</p>
                         </div>
                     </div>
-                    <div class="flex items-center justify-between md:justify-end gap-6 shrink-0">
-                        <span class="text-xs font-mono text-terracotta font-semibold uppercase tracking-wider">Systematic Review • 2025</span>
-                        <div class="arrow-icon w-10 h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    <div class="flex items-center justify-between md:justify-end gap-4 sm:gap-6 shrink-0 mt-2 md:mt-0">
+                        <span class="text-[11px] sm:text-xs font-mono text-terracotta font-semibold uppercase tracking-wider">Systematic Review • 2025</span>
+                        <div class="arrow-icon w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
+                            <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
                         </div>
                     </div>
                 </a>
 
                 <!-- Paper 7 -->
-                <a href="https://link.springer.com/article/10.1186/s12885-025-14482-5" target="_blank" class="pub-row py-8 px-4 flex flex-col md:flex-row md:items-center justify-between gap-6 group">
-                    <div class="flex items-start md:items-center gap-8 md:gap-16">
-                        <span class="font-mono text-sm text-charcoal/40 font-medium">07</span>
+                <a href="https://link.springer.com/article/10.1186/s12885-025-14482-5" target="_blank" class="pub-row py-6 sm:py-8 px-2 sm:px-4 flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-6 group">
+                    <div class="flex items-start md:items-center gap-4 sm:gap-8 md:gap-16">
+                        <span class="font-mono text-xs sm:text-sm text-charcoal/40 font-medium">07</span>
                         <div>
-                            <h3 class="font-serif text-xl sm:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1.5">Direct oral anticoagulant dose vs dual antiplatelet therapy after left atrial appendage closure</h3>
+                            <h3 class="font-serif text-lg sm:text-xl md:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1">Direct oral anticoagulant dose vs dual antiplatelet therapy after left atrial appendage closure</h3>
                             <p class="text-xs sm:text-sm text-charcoal/60 font-light">Comparative systematic review and pooled analysis of post-procedural regimens.</p>
                         </div>
                     </div>
-                    <div class="flex items-center justify-between md:justify-end gap-6 shrink-0">
-                        <span class="text-xs font-mono text-emerald font-semibold uppercase tracking-wider">Meta-Analysis • 2025</span>
-                        <div class="arrow-icon w-10 h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    <div class="flex items-center justify-between md:justify-end gap-4 sm:gap-6 shrink-0 mt-2 md:mt-0">
+                        <span class="text-[11px] sm:text-xs font-mono text-emerald font-semibold uppercase tracking-wider">Meta-Analysis • 2025</span>
+                        <div class="arrow-icon w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
+                            <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
                         </div>
                     </div>
                 </a>
 
                 <!-- Paper 8 -->
-                <a href="https://onlinelibrary.wiley.com/doi/10.1111/jch.70064" target="_blank" class="pub-row py-8 px-4 flex flex-col md:flex-row md:items-center justify-between gap-6 group">
-                    <div class="flex items-start md:items-center gap-8 md:gap-16">
-                        <span class="font-mono text-sm text-charcoal/40 font-medium">08</span>
+                <a href="https://onlinelibrary.wiley.com/doi/10.1111/jch.70064" target="_blank" class="pub-row py-6 sm:py-8 px-2 sm:px-4 flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-6 group">
+                    <div class="flex items-start md:items-center gap-4 sm:gap-8 md:gap-16">
+                        <span class="font-mono text-xs sm:text-sm text-charcoal/40 font-medium">08</span>
                         <div>
-                            <h3 class="font-serif text-xl sm:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1.5">Clinical impact of high-dose esomeprazole-amoxicillin dual therapy as rescue treatment for H. pylori</h3>
+                            <h3 class="font-serif text-lg sm:text-xl md:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1">Clinical impact of high-dose esomeprazole-amoxicillin dual therapy as rescue treatment for H. pylori</h3>
                             <p class="text-xs sm:text-sm text-charcoal/60 font-light">Evaluating eradication efficacy in refractory upper gastrointestinal infections.</p>
                         </div>
                     </div>
-                    <div class="flex items-center justify-between md:justify-end gap-6 shrink-0">
-                        <span class="text-xs font-mono text-bluecard font-semibold uppercase tracking-wider">Clinical Trial • 2025</span>
-                        <div class="arrow-icon w-10 h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    <div class="flex items-center justify-between md:justify-end gap-4 sm:gap-6 shrink-0 mt-2 md:mt-0">
+                        <span class="text-[11px] sm:text-xs font-mono text-bluecard font-semibold uppercase tracking-wider">Clinical Trial • 2025</span>
+                        <div class="arrow-icon w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
+                            <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
                         </div>
                     </div>
                 </a>
 
                 <!-- Paper 9 -->
-                <a href="https://www.sciencedirect.com/science/article/pii/S2772609625000292" target="_blank" class="pub-row py-8 px-4 flex flex-col md:flex-row md:items-center justify-between gap-6 group">
-                    <div class="flex items-start md:items-center gap-8 md:gap-16">
-                        <span class="font-mono text-sm text-charcoal/40 font-medium">09</span>
+                <a href="https://www.sciencedirect.com/science/article/pii/S2772609625000292" target="_blank" class="pub-row py-6 sm:py-8 px-2 sm:px-4 flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-6 group">
+                    <div class="flex items-start md:items-center gap-4 sm:gap-8 md:gap-16">
+                        <span class="font-mono text-xs sm:text-sm text-charcoal/40 font-medium">09</span>
                         <div>
-                            <h3 class="font-serif text-xl sm:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1.5">TROP-2–Directed Antibody–Drug Conjugates in Advanced NSCLC</h3>
+                            <h3 class="font-serif text-lg sm:text-xl md:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1">TROP-2–Directed Antibody–Drug Conjugates in Advanced NSCLC</h3>
                             <p class="text-xs sm:text-sm text-charcoal/60 font-light">Meta-analysis of efficacy, safety profiles, and reconstructed survival outcomes.</p>
                         </div>
                     </div>
-                    <div class="flex items-center justify-between md:justify-end gap-6 shrink-0">
-                        <span class="text-xs font-mono text-terracotta font-semibold uppercase tracking-wider">Oncology • 2025</span>
-                        <div class="arrow-icon w-10 h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    <div class="flex items-center justify-between md:justify-end gap-4 sm:gap-6 shrink-0 mt-2 md:mt-0">
+                        <span class="text-[11px] sm:text-xs font-mono text-terracotta font-semibold uppercase tracking-wider">Oncology • 2025</span>
+                        <div class="arrow-icon w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
+                            <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
                         </div>
                     </div>
                 </a>
 
                 <!-- Paper 10 -->
-                <a href="https://www.sciencedirect.com/science/article/abs/pii/S0147956325000457" target="_blank" class="pub-row py-8 px-4 flex flex-col md:flex-row md:items-center justify-between gap-6 group">
-                    <div class="flex items-start md:items-center gap-8 md:gap-16">
-                        <span class="font-mono text-sm text-charcoal/40 font-medium">10</span>
+                <a href="https://www.sciencedirect.com/science/article/abs/pii/S0147956325000457" target="_blank" class="pub-row py-6 sm:py-8 px-2 sm:px-4 flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-6 group">
+                    <div class="flex items-start md:items-center gap-4 sm:gap-8 md:gap-16">
+                        <span class="font-mono text-xs sm:text-sm text-charcoal/40 font-medium">10</span>
                         <div>
-                            <h3 class="font-serif text-xl sm:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1.5">Intravenous thrombolysis as an adjunct to endovascular thrombectomy in acute basilar artery occlusion</h3>
+                            <h3 class="font-serif text-lg sm:text-xl md:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1">Intravenous thrombolysis as an adjunct to endovascular thrombectomy in acute basilar artery occlusion</h3>
                             <p class="text-xs sm:text-sm text-charcoal/60 font-light">GRADE-assessed systematic review and meta-analysis of neurovascular outcomes.</p>
                         </div>
                     </div>
-                    <div class="flex items-center justify-between md:justify-end gap-6 shrink-0">
-                        <span class="text-xs font-mono text-terracotta font-semibold uppercase tracking-wider">Cardiology • 2025</span>
-                        <div class="arrow-icon w-10 h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    <div class="flex items-center justify-between md:justify-end gap-4 sm:gap-6 shrink-0 mt-2 md:mt-0">
+                        <span class="text-[11px] sm:text-xs font-mono text-terracotta font-semibold uppercase tracking-wider">Cardiology • 2025</span>
+                        <div class="arrow-icon w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
+                            <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
                         </div>
                     </div>
                 </a>
 
                 <!-- Paper 11 -->
-                <a href="https://www.clinical-genitourinary-cancer.com/article/S1558-7673(24)00268-4/abstract" target="_blank" class="pub-row py-8 px-4 flex flex-col md:flex-row md:items-center justify-between gap-6 group">
-                    <div class="flex items-start md:items-center gap-8 md:gap-16">
-                        <span class="font-mono text-sm text-charcoal/40 font-medium">11</span>
+                <a href="https://www.clinical-genitourinary-cancer.com/article/S1558-7673(24)00268-4/abstract" target="_blank" class="pub-row py-6 sm:py-8 px-2 sm:px-4 flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-6 group">
+                    <div class="flex items-start md:items-center gap-4 sm:gap-8 md:gap-16">
+                        <span class="font-mono text-xs sm:text-sm text-charcoal/40 font-medium">11</span>
                         <div>
-                            <h3 class="font-serif text-xl sm:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1.5">Neoadjuvant combination versus single-agent immune checkpoint inhibition in MSI-H/dMMR colorectal cancer</h3>
+                            <h3 class="font-serif text-lg sm:text-xl md:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1">Neoadjuvant combination versus single-agent immune checkpoint inhibition in MSI-H/dMMR colorectal cancer</h3>
                             <p class="text-xs sm:text-sm text-charcoal/60 font-light">Systematic review and meta-analysis on pathologic response rates.</p>
                         </div>
                     </div>
-                    <div class="flex items-center justify-between md:justify-end gap-6 shrink-0">
-                        <span class="text-xs font-mono text-emerald font-semibold uppercase tracking-wider">Oncology • 2024</span>
-                        <div class="arrow-icon w-10 h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    <div class="flex items-center justify-between md:justify-end gap-4 sm:gap-6 shrink-0 mt-2 md:mt-0">
+                        <span class="text-[11px] sm:text-xs font-mono text-emerald font-semibold uppercase tracking-wider">Oncology • 2024</span>
+                        <div class="arrow-icon w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
+                            <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
                         </div>
                     </div>
                 </a>
 
                 <!-- Paper 12 -->
-                <a href="https://link.springer.com/article/10.1007/s00210-025-04388-1" target="_blank" class="pub-row py-8 px-4 flex flex-col md:flex-row md:items-center justify-between gap-6 group">
-                    <div class="flex items-start md:items-center gap-8 md:gap-16">
-                        <span class="font-mono text-sm text-charcoal/40 font-medium">12</span>
+                <a href="https://link.springer.com/article/10.1007/s00210-025-04388-1" target="_blank" class="pub-row py-6 sm:py-8 px-2 sm:px-4 flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-6 group">
+                    <div class="flex items-start md:items-center gap-4 sm:gap-8 md:gap-16">
+                        <span class="font-mono text-xs sm:text-sm text-charcoal/40 font-medium">12</span>
                         <div>
-                            <h3 class="font-serif text-xl sm:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1.5">Efficacy of Aldosterone Synthase Inhibitors in Uncontrolled and Resistant Hypertension</h3>
+                            <h3 class="font-serif text-lg sm:text-xl md:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1">Efficacy of Aldosterone Synthase Inhibitors in Uncontrolled and Resistant Hypertension</h3>
                             <p class="text-xs sm:text-sm text-charcoal/60 font-light">Updated systematic review and meta-analysis on blood pressure reduction.</p>
                         </div>
                     </div>
-                    <div class="flex items-center justify-between md:justify-end gap-6 shrink-0">
-                        <span class="text-xs font-mono text-bluecard font-semibold uppercase tracking-wider">Hypertension • 2025</span>
-                        <div class="arrow-icon w-10 h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    <div class="flex items-center justify-between md:justify-end gap-4 sm:gap-6 shrink-0 mt-2 md:mt-0">
+                        <span class="text-[11px] sm:text-xs font-mono text-bluecard font-semibold uppercase tracking-wider">Hypertension • 2025</span>
+                        <div class="arrow-icon w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
+                            <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
                         </div>
                     </div>
                 </a>
 
                 <!-- Paper 13 -->
-                <a href="https://www.sciencedirect.com/science/article/abs/pii/S104084282500335X" target="_blank" class="pub-row py-8 px-4 flex flex-col md:flex-row md:items-center justify-between gap-6 group">
-                    <div class="flex items-start md:items-center gap-8 md:gap-16">
-                        <span class="font-mono text-sm text-charcoal/40 font-medium">13</span>
+                <a href="https://www.sciencedirect.com/science/article/abs/pii/S104084282500335X" target="_blank" class="pub-row py-6 sm:py-8 px-2 sm:px-4 flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-6 group">
+                    <div class="flex items-start md:items-center gap-4 sm:gap-8 md:gap-16">
+                        <span class="font-mono text-xs sm:text-sm text-charcoal/40 font-medium">13</span>
                         <div>
-                            <h3 class="font-serif text-xl sm:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1.5">Intravenous Thrombolysis Outcomes in Basilar Artery Occlusion</h3>
+                            <h3 class="font-serif text-lg sm:text-xl md:text-2xl font-bold text-charcoal group-hover:text-terracotta transition-colors mb-1">Intravenous Thrombolysis Outcomes in Basilar Artery Occlusion</h3>
                             <p class="text-xs sm:text-sm text-charcoal/60 font-light">Comprehensive analysis of mechanical thrombectomy adjuncts and recovery rates.</p>
                         </div>
                     </div>
-                    <div class="flex items-center justify-between md:justify-end gap-6 shrink-0">
-                        <span class="text-xs font-mono text-terracotta font-semibold uppercase tracking-wider">Neurology • 2025</span>
-                        <div class="arrow-icon w-10 h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    <div class="flex items-center justify-between md:justify-end gap-4 sm:gap-6 shrink-0 mt-2 md:mt-0">
+                        <span class="text-[11px] sm:text-xs font-mono text-terracotta font-semibold uppercase tracking-wider">Neurology • 2025</span>
+                        <div class="arrow-icon w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal">
+                            <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
                         </div>
                     </div>
                 </a>
@@ -419,8 +436,8 @@
         </div>
 
         <!-- View All 13 Publications Toggle Button -->
-        <div class="mt-12 text-center">
-            <button id="toggle-pubs-btn" onclick="togglePubs()" class="inline-flex items-center gap-2 px-8 py-4 rounded-full text-xs font-mono font-semibold bg-cream text-charcoal border border-charcoal/20 hover:border-charcoal hover:bg-charcoal/5 transition-all shadow-sm">
+        <div class="mt-10 sm:mt-12 text-center">
+            <button id="toggle-pubs-btn" onclick="togglePubs()" class="inline-flex items-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-xs font-mono font-semibold bg-cream text-charcoal border border-charcoal/20 hover:border-charcoal hover:bg-charcoal/5 transition-all shadow-sm">
                 <span id="toggle-text">View all 13 publications</span>
                 <svg id="toggle-icon" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
             </button>
@@ -428,20 +445,20 @@
     </section>
 
     <!-- SKILLS & EXPERTISE: FANNED CARD DECK -->
-    <section id="skills" class="py-24 px-6 md:px-12 max-w-7xl mx-auto">
-        <div class="text-center max-w-3xl mx-auto mb-16">
+    <section id="skills" class="py-20 sm:py-24 px-4 sm:px-6 md:px-12 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
             <span class="text-terracotta font-mono text-xs uppercase tracking-widest block mb-2">Capabilities & Recognition</span>
-            <h2 class="font-serif text-4xl sm:text-5xl font-bold text-charcoal">Skills, Certifications & Honors</h2>
-            <p class="text-charcoal/60 text-sm mt-3">Hover over any card below to elevate and bring it into focus.</p>
+            <h2 class="font-serif text-3.5xl sm:text-5xl font-bold text-charcoal">Skills, Certifications & Honors</h2>
+            <p class="text-charcoal/60 text-sm mt-3">Hover or tap any card below to elevate and bring it into focus.</p>
         </div>
 
-        <div class="flex flex-wrap lg:flex-nowrap items-center justify-center gap-6 lg:-space-x-12 py-10 px-4">
+        <div class="flex flex-wrap lg:flex-nowrap items-center justify-center gap-6 lg:-space-x-12 py-6 sm:py-10 px-2 sm:px-4">
             
             <!-- Card 1 -->
-            <div class="fanned-card w-full sm:w-[300px] h-[450px] bg-terracotta text-cream p-8 rounded-3xl shadow-xl flex flex-col justify-between rotate-[-4deg] lg:translate-y-4">
+            <div class="fanned-card w-full sm:w-[280px] md:w-[300px] h-[420px] sm:h-[450px] bg-terracotta text-cream p-6 sm:p-8 rounded-3xl shadow-xl flex flex-col justify-between sm:rotate-[-4deg] lg:translate-y-4">
                 <div>
                     <span class="font-mono text-xs uppercase tracking-widest text-cream/70 block mb-2">01 / Methodology</span>
-                    <h3 class="font-serif text-2xl font-bold mb-4">Statistical & Research</h3>
+                    <h3 class="font-serif text-xl sm:text-2xl font-bold mb-4">Statistical & Research</h3>
                     <ul class="space-y-2 text-xs text-cream/90 font-light">
                         <li>• Clinical Research Design</li>
                         <li>• Qualitative & Quantitative Analysis</li>
@@ -455,10 +472,10 @@
             </div>
 
             <!-- Card 2 -->
-            <div class="fanned-card w-full sm:w-[300px] h-[450px] bg-emerald text-cream p-8 rounded-3xl shadow-xl flex flex-col justify-between rotate-[-2deg] lg:-translate-y-2">
+            <div class="fanned-card w-full sm:w-[280px] md:w-[300px] h-[420px] sm:h-[450px] bg-emerald text-cream p-6 sm:p-8 rounded-3xl shadow-xl flex flex-col justify-between sm:rotate-[-2deg] lg:-translate-y-2">
                 <div>
                     <span class="font-mono text-xs uppercase tracking-widest text-cream/70 block mb-2">02 / Design</span>
-                    <h3 class="font-serif text-2xl font-bold mb-4">Study Execution</h3>
+                    <h3 class="font-serif text-xl sm:text-2xl font-bold mb-4">Study Execution</h3>
                     <ul class="space-y-2 text-xs text-cream/90 font-light">
                         <li>• Protocol Development</li>
                         <li>• Literature Screening & Extraction</li>
@@ -472,10 +489,10 @@
             </div>
 
             <!-- Card 3 -->
-            <div class="fanned-card w-full sm:w-[300px] h-[450px] bg-cream text-charcoal border-2 border-charcoal/20 p-8 rounded-3xl shadow-xl flex flex-col justify-between rotate-[0deg] lg:translate-y-0 z-10">
+            <div class="fanned-card w-full sm:w-[280px] md:w-[300px] h-[420px] sm:h-[450px] bg-cream text-charcoal border-2 border-charcoal/20 p-6 sm:p-8 rounded-3xl shadow-xl flex flex-col justify-between sm:rotate-[0deg] lg:translate-y-0 z-10">
                 <div>
                     <span class="font-mono text-xs uppercase tracking-widest text-terracotta block mb-2">03 / Credentials</span>
-                    <h3 class="font-serif text-2xl font-bold mb-4">Certifications</h3>
+                    <h3 class="font-serif text-xl sm:text-2xl font-bold mb-4">Certifications</h3>
                     <ul class="space-y-2 text-xs text-charcoal/80 font-light">
                         <li>• Meta-analysis Masterclass (RCP)</li>
                         <li>• Level 1 Workshop (RCP)</li>
@@ -488,10 +505,10 @@
             </div>
 
             <!-- Card 4 -->
-            <div class="fanned-card w-full sm:w-[300px] h-[450px] bg-bluecard text-cream p-8 rounded-3xl shadow-xl flex flex-col justify-between rotate-[2deg] lg:-translate-y-2">
+            <div class="fanned-card w-full sm:w-[280px] md:w-[300px] h-[420px] sm:h-[450px] bg-bluecard text-cream p-6 sm:p-8 rounded-3xl shadow-xl flex flex-col justify-between sm:rotate-[2deg] lg:-translate-y-2">
                 <div>
                     <span class="font-mono text-xs uppercase tracking-widest text-cream/70 block mb-2">04 / Editorial</span>
-                    <h3 class="font-serif text-2xl font-bold mb-4">Peer Reviewer</h3>
+                    <h3 class="font-serif text-xl sm:text-2xl font-bold mb-4">Peer Reviewer</h3>
                     <ul class="space-y-2 text-xs text-cream/90 font-light">
                         <li>• Springer Nature Reviewer</li>
                         <li>• BMC Journals Reviewer</li>
@@ -505,10 +522,10 @@
             </div>
 
             <!-- Card 5 -->
-            <div class="fanned-card w-full sm:w-[300px] h-[450px] bg-charcoal text-cream p-8 rounded-3xl shadow-xl flex flex-col justify-between rotate-[4deg] lg:translate-y-4">
+            <div class="fanned-card w-full sm:w-[280px] md:w-[300px] h-[420px] sm:h-[450px] bg-charcoal text-cream p-6 sm:p-8 rounded-3xl shadow-xl flex flex-col justify-between sm:rotate-[4deg] lg:translate-y-4">
                 <div>
                     <span class="font-mono text-xs uppercase tracking-widest text-emerald block mb-2">05 / Recognition</span>
-                    <h3 class="font-serif text-2xl font-bold mb-4">Honors & Leadership</h3>
+                    <h3 class="font-serif text-xl sm:text-2xl font-bold mb-4">Honors & Leadership</h3>
                     <ul class="space-y-2 text-xs text-cream/90 font-light">
                         <li>• Academic Distinction Awardee</li>
                         <li>• Vice President SIMS-LC (IFMSA-Pakistan)</li>
@@ -526,76 +543,76 @@
     </section>
 
     <!-- JOURNEY / EXPERIENCE SECTION -->
-    <section id="journey" class="py-24 px-6 md:px-12 max-w-4xl mx-auto">
-        <div class="text-center mb-16">
+    <section id="journey" class="py-20 sm:py-24 px-4 sm:px-6 md:px-12 max-w-4xl mx-auto">
+        <div class="text-center mb-12 sm:mb-16">
             <span class="text-terracotta font-mono text-xs uppercase tracking-widest block mb-2">Timeline</span>
-            <h2 class="font-serif text-4xl sm:text-5xl font-bold text-charcoal">Academic & Leadership Journey</h2>
+            <h2 class="font-serif text-3.5xl sm:text-5xl font-bold text-charcoal">Academic & Leadership Journey</h2>
         </div>
 
-        <div class="border-l-2 border-charcoal/20 ml-4 sm:ml-8 space-y-12">
+        <div class="border-l-2 border-charcoal/20 ml-3 sm:ml-8 space-y-10 sm:space-y-12">
             
-            <div class="relative pl-8 sm:pl-10">
+            <div class="relative pl-6 sm:pl-10">
                 <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-terracotta border-4 border-cream"></div>
                 <span class="text-xs font-mono text-terracotta font-semibold">Dec 2025 – Present</span>
-                <h3 class="font-serif text-2xl font-bold text-charcoal mt-1">Vice President SIMS-LC</h3>
+                <h3 class="font-serif text-xl sm:text-2xl font-bold text-charcoal mt-1">Vice President SIMS-LC</h3>
                 <p class="text-xs font-mono text-charcoal/60 mb-2">IFMSA-Pakistan</p>
-                <p class="text-sm text-charcoal/80">Leading medical student leadership initiatives, public health campaigns, and international exchange programs.</p>
+                <p class="text-xs sm:text-sm text-charcoal/80">Leading medical student leadership initiatives, public health campaigns, and international exchange programs.</p>
             </div>
 
-            <div class="relative pl-8 sm:pl-10">
+            <div class="relative pl-6 sm:pl-10">
                 <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-emerald border-4 border-cream"></div>
                 <span class="text-xs font-mono text-emerald font-semibold">Jun 2025 – Present</span>
-                <h3 class="font-serif text-2xl font-bold text-charcoal mt-1">Peer Reviewer & Country Coordinator</h3>
+                <h3 class="font-serif text-xl sm:text-2xl font-bold text-charcoal mt-1">Peer Reviewer & Country Coordinator</h3>
                 <p class="text-xs font-mono text-charcoal/60 mb-2">Springer Nature, BMC, Baishideng & Global Alliance of Young Researchers</p>
-                <p class="text-sm text-charcoal/80">Conducting peer review for international biomedical journals and coordinating young researcher initiatives.</p>
+                <p class="text-xs sm:text-sm text-charcoal/80">Conducting peer review for international biomedical journals and coordinating young researcher initiatives.</p>
             </div>
 
-            <div class="relative pl-8 sm:pl-10">
+            <div class="relative pl-6 sm:pl-10">
                 <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-bluecard border-4 border-cream"></div>
                 <span class="text-xs font-mono text-bluecard font-semibold">Mar 2025 – Present</span>
-                <h3 class="font-serif text-2xl font-bold text-charcoal mt-1">Project Director (Hepatitis A, E and Typhoid)</h3>
+                <h3 class="font-serif text-xl sm:text-2xl font-bold text-charcoal mt-1">Project Director (Hepatitis A, E and Typhoid)</h3>
                 <p class="text-xs font-mono text-charcoal/60 mb-2">VFAHT-SIMS</p>
-                <p class="text-sm text-charcoal/80">Directing public health awareness and community screening projects across institutional chapters.</p>
+                <p class="text-xs sm:text-sm text-charcoal/80">Directing public health awareness and community screening projects across institutional chapters.</p>
             </div>
 
-            <div class="relative pl-8 sm:pl-10">
+            <div class="relative pl-6 sm:pl-10">
                 <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-charcoal border-4 border-cream"></div>
                 <span class="text-xs font-mono text-charcoal font-semibold">Feb 2022 – May 2027</span>
-                <h3 class="font-serif text-2xl font-bold text-charcoal mt-1">Medical Student (MBBS)</h3>
+                <h3 class="font-serif text-xl sm:text-2xl font-bold text-charcoal mt-1">Medical Student (MBBS)</h3>
                 <p class="text-xs font-mono text-charcoal/60 mb-2">Services Institute of Medical Sciences (SIMS), Lahore</p>
-                <p class="text-sm text-charcoal/80">Completed foundational clinical coursework and maintained an active research portfolio with 13 peer-reviewed papers.</p>
+                <p class="text-xs sm:text-sm text-charcoal/80">Completed foundational clinical coursework and maintained an active research portfolio with 13 peer-reviewed papers.</p>
             </div>
 
         </div>
     </section>
 
     <!-- CONTACT SECTION -->
-    <section id="contact" class="py-24 px-6 md:px-12 max-w-5xl mx-auto">
-        <div class="bg-charcoal text-cream p-8 sm:p-14 rounded-3xl shadow-2xl">
-            <div class="max-w-xl mb-10">
+    <section id="contact" class="py-20 sm:py-24 px-4 sm:px-6 md:px-12 max-w-5xl mx-auto">
+        <div class="bg-charcoal text-cream p-6 sm:p-10 md:p-14 rounded-3xl shadow-2xl">
+            <div class="max-w-xl mb-8 sm:mb-10">
                 <span class="text-terracotta font-mono text-xs uppercase tracking-widest block mb-2">Get in Touch</span>
-                <h2 class="font-serif text-3xl sm:text-4xl font-bold mb-4">Let's Collaborate</h2>
-                <p class="text-cream/70 text-sm font-light">
+                <h2 class="font-serif text-2.5xl sm:text-4xl font-bold mb-4">Let's Collaborate</h2>
+                <p class="text-cream/70 text-xs sm:text-sm font-light">
                     Open to research collaborations, clinical mentorship inquiries, conference invitations, and academic discussions.
                 </p>
             </div>
 
-            <div class="flex flex-wrap gap-4">
+            <div class="flex flex-wrap gap-3 sm:gap-4">
                 <!-- LinkedIn Button -->
-                <a href="https://www.linkedin.com/in/muhammad-ansab-545131280/" target="_blank" class="inline-flex items-center gap-3 px-6 py-3.5 rounded-full bg-cream text-charcoal font-semibold text-sm hover:bg-terracotta hover:text-cream transition-all shadow-md">
-                    <svg class="w-5 h-5 text-bluecard fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <a href="https://www.linkedin.com/in/muhammad-ansab-545131280/" target="_blank" class="inline-flex items-center gap-2 sm:gap-3 px-5 sm:px-6 py-3 sm:py-3.5 rounded-full bg-cream text-charcoal font-semibold text-xs sm:text-sm hover:bg-terracotta hover:text-cream transition-all shadow-md">
+                    <svg class="w-4 h-4 sm:w-5 sm:h-5 text-bluecard fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                     <span>LinkedIn</span>
                 </a>
 
                 <!-- Email Button -->
-                <a href="mailto:ansabilyas1.4@gmail.com" class="inline-flex items-center gap-3 px-6 py-3.5 rounded-full bg-cream text-charcoal font-semibold text-sm hover:bg-terracotta hover:text-cream transition-all shadow-md">
-                    <svg class="w-5 h-5 text-terracotta fill-current" viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.439l4.623 3.727zm-4.623-5.929h20l-10 8.081-10-8.081zm0 13.072l4.787-5.915 4.213 3.398 4.213-3.398 4.787 5.915h-17.999zm19.377-3.633l-4.623-3.727 4.623-5.712v9.439z"/></svg>
+                <a href="mailto:ansabilyas1.4@gmail.com" class="inline-flex items-center gap-2 sm:gap-3 px-5 sm:px-6 py-3 sm:py-3.5 rounded-full bg-cream text-charcoal font-semibold text-xs sm:text-sm hover:bg-terracotta hover:text-cream transition-all shadow-md">
+                    <svg class="w-4 h-4 sm:w-5 sm:h-5 text-terracotta fill-current" viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.439l4.623 3.727zm-4.623-5.929h20l-10 8.081-10-8.081zm0 13.072l4.787-5.915 4.213 3.398 4.213-3.398 4.787 5.915h-17.999zm19.377-3.633l-4.623-3.727 4.623-5.712v9.439z"/></svg>
                     <span>Email</span>
                 </a>
 
                 <!-- Phone / Contact Button -->
-                <a href="tel:+923246427446" class="inline-flex items-center gap-3 px-6 py-3.5 rounded-full bg-cream text-charcoal font-semibold text-sm hover:bg-terracotta hover:text-cream transition-all shadow-md">
-                    <svg class="w-5 h-5 text-emerald fill-current" viewBox="0 0 24 24"><path d="M20 22.621l-3.521-6.795c-.275-.531-.926-.745-1.455-.472l-2.039 1.055c-1.637-.775-3.08-2.218-3.855-3.855l1.055-2.039c.273-.529.059-1.18-.472-1.455l-6.795-3.521c-.542-.281-1.205-.094-1.528.434l-2 3.333c-1.378 2.296-.289 5.342 2.378 6.577 3.513 1.624 6.84 4.951 8.464 8.464 1.235 2.667 4.281 3.756 6.577 2.378l3.333-2.001c.528-.323.715-.986.434-1.528z"/></svg>
+                <a href="tel:+923246427446" class="inline-flex items-center gap-2 sm:gap-3 px-5 sm:px-6 py-3 sm:py-3.5 rounded-full bg-cream text-charcoal font-semibold text-xs sm:text-sm hover:bg-terracotta hover:text-cream transition-all shadow-md">
+                    <svg class="w-4 h-4 sm:w-5 sm:h-5 text-emerald fill-current" viewBox="0 0 24 24"><path d="M20 22.621l-3.521-6.795c-.275-.531-.926-.745-1.455-.472l-2.039 1.055c-1.637-.775-3.08-2.218-3.855-3.855l1.055-2.039c.273-.529.059-1.18-.472-1.455l-6.795-3.521c-.542-.281-1.205-.094-1.528.434l-2 3.333c-1.378 2.296-.289 5.342 2.378 6.577 3.513 1.624 6.84 4.951 8.464 8.464 1.235 2.667 4.281 3.756 6.577 2.378l3.333-2.001c.528-.323.715-.986.434-1.528z"/></svg>
                     <span>Direct Call</span>
                 </a>
             </div>
@@ -603,10 +620,10 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="py-12 px-6 md:px-12 border-t border-charcoal/10 text-xs text-charcoal/60 font-mono">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+    <footer class="py-10 sm:py-12 px-4 sm:px-6 md:px-12 border-t border-charcoal/10 text-xs text-charcoal/60 font-mono">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
             <p>© 2026 Muhammad Ansab. All rights reserved.</p>
-            <p class="text-center">Developed by <a href="https://usmanubaid.vercel.app" target="_blank" class="text-charcoal font-semibold hover:text-terracotta transition-colors underline decoration-charcoal/30 underline-offset-4">Usman Ubaid</a></p>
+            <p>Developed by <a href="https://usmanubaid.vercel.app" target="_blank" class="text-charcoal font-semibold hover:text-terracotta transition-colors underline decoration-charcoal/30 underline-offset-4">Usman Ubaid</a></p>
             <a href="#hero" class="hover:text-terracotta transition-colors">Back to Top ↑</a>
         </div>
     </footer>
@@ -623,6 +640,12 @@
                 layer.style.transform = `translate(${x * (speed / 10)}px, ${y * (speed / 10)}px)`;
             });
         });
+
+        // Toggle Mobile Menu Drawer
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
 
         // Toggle View All Publications Logic
         function togglePubs() {
